@@ -3,48 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Jay's Website</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.17/dist/98.css" />
 </head>
 <body>
 <div>
-    <h1>Jay's Website</h1>
     <div>
-        <div class="window" id="hello-world">
-            <span class="window-banner">Hello World!<button>X</button></span>
-            <h4>Welcome to my website! I'm still building this sorry it's a mess lmao</h4>
-        </div>
+        <div class="window" id="hello">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Hello World!
+                </div>
 
-        <div class="window" id="socials" style="top: 25vh">
-            <span class="window-banner">Where to find me:<button>X</button></span>
-            <ul>
-                <li><img src="images/mastodon.ico"><a href="https://mastodon.jemverse.xyz/@Jemma"> @jemma@mastodon.jemverse.xyz</a></li>
-                <li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>
-                <li><img src="images/twitter.ico"><a href="https://twitter.com/JayDaBirb"> @JayDaBirb</a></li>
-                <li><img src="images/discord.ico"><a> Jemma#6508</a></li>
-                <li><img src="images/github.ico"><a href="https://github.com/CaramelKat"> CaramelKat</a></li>
-            </ul>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>Welcome to my website! I'm still building this sorry it's a mess lmao</p>
+                <section class="field-row" style="justify-content: flex-end">
+                    <button>Cool</button>
+                    <button>Lame</button>
+                </section>
+            </div>
         </div>
-        <div class="window" id="projects" style="top: 54vh">
-            <span class="window-banner">Projects I'm working on:<button>X</button></span>
-            <ul>
-                <li>
-                    <img src="images/pretendo.ico"><a href="https://pretendo.network/"> Pretendo Network</a>
-                    <p>Open source replacement for the Nintendo Network servers on the 3DS and Wii U</p>
-                </li>
-            </ul>
+        <div class="window" id="about">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    About Me
+                </div>
+
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <ul class="tree-view">
+                    <li>Table of Contents</li>
+                    <li>Where to find me:</li>
+                    <ul>
+                        <li><img src="images/mastodon.ico"><a href="https://mastodon.jemverse.xyz/@Jemma"> @jemma@mastodon.jemverse.xyz</a></li>
+                        <li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>
+                        <li><img src="images/twitter.ico"><a href="https://twitter.com/JayDaBirb"> @JayDaBirb</a></li>
+                        <li><img src="images/discord.ico"><a> Jemma#6508</a></li>
+                        <li><img src="images/github.ico"><a href="https://github.com/CaramelKat"> CaramelKat</a></li>
+                    </ul>
+                    <li>Projects I'm working on:</li>
+                    <li>
+                        <details>
+                            <summary><img src="images/pretendo.ico"><a href="https://pretendo.network/"> Pretendo Network</a></summary>
+                            <ul>
+                                <li>Open source replacement for the Nintendo Network on the 3DS and Wii U</li>
+                                <li>At</li>
+                                <li>All</li>
+                                <li>Cost</li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div class="window" id="cool">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Hire me ;).gif
+                </div>
 
-
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="images/cool.gif">
+            </div>
+        </div>
     </div>
 </div>
 <script>
-    dragElement(document.getElementById("hello-world"));
-    dragElement(document.getElementById("socials"));
-    dragElement(document.getElementById("projects"));
+    dragElement(document.getElementById('hello'))
+    dragElement(document.getElementById('about'))
+    dragElement(document.getElementById('cool'))
 
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (elmnt.children[0].classList.contains('window-banner')) {
+        if (elmnt.children[0].classList.contains('title-bar')) {
             // if present, the header is where you move the DIV from:
             elmnt.children[0].onmousedown = dragMouseDown;
         } else {

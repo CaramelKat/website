@@ -1,5 +1,5 @@
 :root {
-    --background: #56a3a4;
+    --background: #007B7B;
     --text: black;
     --text-secondary: #A1A8D9;
     --btn: #673DB6;
@@ -16,19 +16,13 @@ body {
     width: 100%;
     background: var(--background);
     max-width: 100vw;
-    position: relative; /* This fixes overflow-x not hiding on Safari on mobile */
+    position: relative;
     overflow-x: hidden;
     margin: 0;
     color: var(--text);
-    justify-content: center;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
-ul {
-    padding-left: 20px;
-}
-
-li > img {
+li > img, summary > img {
     height: 15px;
     border-radius: 5px;
     vertical-align: middle;
@@ -40,15 +34,47 @@ body > div {
     margin: 10px;
 }
 
-.window {
-    position: absolute;
-    background: var(--window-background-color);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 10px;
-    overflow-x: hidden;
-    padding: 10px;
+details summary::-webkit-details-marker {
+    display:none;
 }
 
+.window {
+    position: absolute;
+    margin: 0 !important;
+}
+
+#hello {
+    top: 5px;
+    width: 250px;
+}
+
+#about {
+    top: 120px;
+    width: 250px;
+}
+
+#cool {
+    top: 20px;
+    left: 285px;
+    width: 405px;
+}
+
+@media (max-width: 700px) {
+    #hello {
+        top: 5px;
+        width: 250px;
+    }
+    #about {
+        top: 120px;
+        width: 250px;
+    }
+    #cool {
+        top: 385px;
+        left: 10px;
+        width: 405px;
+    }
+}
+/*
 .window-banner {
     display: block;
     width: 110%;
@@ -66,7 +92,7 @@ body > div {
     width: 21px;
     height: 21px;
     padding: 0;
-}
+}*/
 
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
