@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jay's Website</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div>
+    <h1>Jay's Website</h1>
+    <div>
+        <div class="window" id="hello-world">
+            <span class="window-banner">Hello World!<button>X</button></span>
+            <h4>Welcome to my website! I'm still building this sorry it's a mess lmao</h4>
+        </div>
+
+        <div class="window" id="socials" style="top: 25vh">
+            <span class="window-banner">Where to find me:<button>X</button></span>
+            <ul>
+                <li><img src="images/mastodon.ico"><a href="https://mastodon.jemverse.xyz/@Jemma"> @jemma@mastodon.jemverse.xyz</a></li>
+                <li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>
+                <li><img src="images/twitter.ico"><a href="https://twitter.com/JayDaBirb"> @JayDaBirb</a></li>
+                <li><img src="images/discord.ico"><a> Jemma#6508</a></li>
+                <li><img src="images/github.ico"><a href="https://github.com/CaramelKat"> CaramelKat</a></li>
+            </ul>
+        </div>
+        <div class="window" id="projects" style="top: 54vh">
+            <span class="window-banner">Projects I'm working on:<button>X</button></span>
+            <ul>
+                <li>
+                    <img src="images/pretendo.ico"><a href="https://pretendo.network/"> Pretendo Network</a>
+                    <p>Open source replacement for the Nintendo Network servers on the 3DS and Wii U</p>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    dragElement(document.getElementById("hello-world"));
+    dragElement(document.getElementById("socials"));
+    dragElement(document.getElementById("projects"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (elmnt.children[0].classList.contains('window-banner')) {
+            // if present, the header is where you move the DIV from:
+            elmnt.children[0].onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
+</body>
+</html>
