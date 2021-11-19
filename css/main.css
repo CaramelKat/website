@@ -12,18 +12,19 @@
     --window-background-color: #b9c0c1;
     --window-border: #f0f1f2
 }
+
 body {
-    width: 100%;
     background: var(--background);
-    max-width: 100vw;
-    position: relative;
-    overflow-x: hidden;
-    margin: 0;
     color: var(--text);
+}
+
+img {
+    width: 100%;
 }
 
 li > img, summary > img {
     height: 15px;
+    width: 15px;
     border-radius: 5px;
     vertical-align: middle;
 }
@@ -32,10 +33,6 @@ li > a {
 }
 body > div {
     margin: 10px;
-}
-
-details summary::-webkit-details-marker {
-    display:none;
 }
 
 .window {
@@ -60,18 +57,31 @@ details summary::-webkit-details-marker {
 }
 
 @media (max-width: 700px) {
+    body {
+        width: 100%;
+        background: var(--background);
+        max-width: 100vw;
+        position: relative;
+        overflow-x: hidden;
+        margin: 0;
+        color: var(--text);
+    }
+    .window {
+        position: unset;
+        top: 20px
+    }
     #hello {
-        top: 5px;
-        width: 250px;
+        top: unset;
+        width: unset;
     }
     #about {
-        top: 120px;
-        width: 250px;
+        top: unset;
+        width: unset;
     }
     #cool {
-        top: 385px;
-        left: 10px;
-        width: 405px;
+        top: unset;
+        left: unset;
+        width: unset;
     }
 }
 /*
