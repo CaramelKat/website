@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Jay's Website</title>
     <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.17/dist/98.css"/>
 </head>
 <body>
@@ -43,24 +44,44 @@
             </div>
             <div class="window-body">
                 <ul class="tree-view">
-                    <li>Table of Contents</li>
-                    <li>Where to find me:</li>
-                    <ul>
+                    <li><b>Who am I?</b></li>
+                    <li>
+                        <img src="https://github.com/caramelkat.png" id="pfp">
+                    </li>
+                    <li>
+                        <p>
+                            Hello! My name is Jemma, I'm a 3rd year computer science student at the University of Wisconsin: Platteville.
+                        </p>
+                        <p>
+                            I specialize in reverse engineering and implementing backend systems, and web development
+                        </p>
+                    </li>
+                    <li><b>Where to find me:</b></li>
+                    <li>
                         <li><img src="images/mastodon.ico"><a rel="me" href="https://mastodon.jemverse.xyz/@Jemma"> @jemma@mastodon.jemverse.xyz</a></li>
                         <li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>
                         <li><img src="images/twitter.ico"><a href="https://twitter.com/JayDaBirb"> @JayDaBirb</a></li>
                         <li><img src="images/discord.ico"><a> Jemma#6508</a></li>
                         <li><img src="images/github.ico"><a href="https://github.com/CaramelKat"> CaramelKat</a></li>
-                    </ul>
-                    <li>Projects I'm working on:</li>
+                    </li>
+                    <br>
+                    <li><b>Projects I'm working on:</b></li>
                     <li>
-                        <details>
-                            <summary><img src="images/pretendo.ico"><a href="https://pretendo.network/"> Pretendo Network</a></summary>
+                        <details open>
+                            <summary><img src="images/pretendo.ico"><a href="https://pretendo.network" target="_blank"> <b>Pretendo Network</b></a></summary>
                             <ul>
                                 <li>Open source replacement for the Nintendo Network on the 3DS and Wii U</li>
-                                <li>At</li>
-                                <li>All</li>
-                                <li>Cost</li>
+                                <li><b>HTMl / CSS / NodeJS / MongoDB</b></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <br>
+                    <li>
+                        <details open>
+                            <summary><img src="images/tesomas.ico"><a href="https://tesomas.camp" target="_blank"> <b>Tesomas.Camp</b></a></summary>
+                            <ul>
+                                <li>PWA for a scout camp with an interactive map, and information about areas and events</li>
+                                <li><b>HTMl / CSS / NodeJS</b></li>
                             </ul>
                         </details>
                     </li>
@@ -93,39 +114,32 @@
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (elmnt.children[0].classList.contains('title-bar')) {
-            // if present, the header is where you move the DIV from:
             elmnt.children[0].onmousedown = dragMouseDown;
         } else {
-            // otherwise, move the DIV from anywhere inside the DIV:
             elmnt.onmousedown = dragMouseDown;
         }
 
         function dragMouseDown(e) {
             e = e || window.event;
             e.preventDefault();
-            // get the mouse cursor position at startup:
             pos3 = e.clientX;
             pos4 = e.clientY;
             document.onmouseup = closeDragElement;
-            // call a function whenever the cursor moves:
             document.onmousemove = elementDrag;
         }
 
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
-            // calculate the new cursor position:
             pos1 = pos3 - e.clientX;
             pos2 = pos4 - e.clientY;
             pos3 = e.clientX;
             pos4 = e.clientY;
-            // set the element's new position:
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
         function closeDragElement() {
-            // stop moving when mouse button is released:
             document.onmouseup = null;
             document.onmousemove = null;
         }

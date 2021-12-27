@@ -23,8 +23,8 @@ img {
 }
 
 li > img, summary > img {
-    height: 15px;
-    width: 15px;
+    height: 1.5em;
+    width: 1.5em;
     border-radius: 5px;
     vertical-align: middle;
 }
@@ -41,19 +41,19 @@ body > div {
 }
 
 #hello {
-    top: 5px;
-    width: 250px;
+    top: 5vh;
+    width: 35vw;
 }
 
 #about {
-    top: 120px;
-    width: 250px;
+    top: 22vh;
+    width: 35vw;
 }
 
 #cool {
-    top: 20px;
-    left: 285px;
-    width: 405px;
+    top: 8vh;
+    left: 40vw;
+    width: 50vw;
 }
 
 @media (max-width: 700px) {
@@ -68,7 +68,8 @@ body > div {
     }
     .window {
         position: unset;
-        top: 20px
+        top: 20px;
+        margin-bottom: 1em !important;
     }
     #hello {
         top: unset;
@@ -103,6 +104,37 @@ body > div {
     height: 21px;
     padding: 0;
 }*/
+
+.title-bar {
+    color: white;
+    background: linear-gradient(90deg,navy,#1084d0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+    padding: 0.2ch 0.5ch;
+}
+
+.window {
+    box-shadow: inset -0.05em -0.05em #0a0a0a, inset 0.05em 0.05em #dfdfdf, inset -0.1em -0.1em grey, inset 0.1em 0.1em #fff;
+    background: silver;
+    padding: 0.15em;
+}
+
+#pfp {
+    width: 10em;
+    height: 10em;
+}
+
+::marker {
+    display: none;
+}
+
+summary {
+    list-style: none;
+}
+
+.window-body {padding: 0.15em;}
 
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
