@@ -46,17 +46,21 @@ body > div {
 }
 
 #about {
-    top: 22vh;
+    top: 18vh;
     width: 35vw;
 }
 
 #cool {
     top: 8vh;
     left: 40vw;
-    width: 50vw;
+    width: 25vw;
 }
 
-@media (max-width: 700px) {
+.user-icon {
+    width: 50%;
+}
+
+@media (max-width: 1024px) {
     body {
         width: 100%;
         background: var(--background);
@@ -83,6 +87,15 @@ body > div {
         top: unset;
         left: unset;
         width: unset;
+    }
+    .title-bar {
+        padding: 6px 4px 6px 6px !important;
+    }
+    li > img, summary > img {
+        height: 20px;
+        width: 20px;
+        border-radius: 5px;
+        vertical-align: middle;
     }
 }
 /*

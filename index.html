@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jay's Website</title>
+    <title>Jem's Website</title>
     <link rel="stylesheet" href="css/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.17/dist/98.css"/>
 </head>
 <body>
@@ -30,10 +29,11 @@
                 </section>
             </div>
         </div>
+        <br>
         <div class="window" id="about">
             <div class="title-bar">
                 <div class="title-bar-text">
-                    About Me
+                    Who am I?
                 </div>
 
                 <div class="title-bar-controls">
@@ -44,56 +44,53 @@
             </div>
             <div class="window-body">
                 <ul class="tree-view">
-                    <li><b>Who am I?</b></li>
-                    <li>
-                        <img src="https://github.com/caramelkat.png" id="pfp">
-                    </li>
-                    <li>
-                        <p>
-                            Hello! My name is Jemma, I'm a 3rd year computer science student at the University of Wisconsin: Platteville.
-                        </p>
-                        <p>
-                            I specialize in reverse engineering and implementing backend systems, and web development
-                        </p>
-                    </li>
-                    <li><b>Where to find me:</b></li>
-                    <li>
+                    <img class="user-icon" src="images/usericon.jpg">
+                    <p>Howdy! My name is Jemma, I'm a 3rd year computer science student at the <b><a href="https://uwplatt.edu/">University of Wisconsin: Platteville</a></b></p>
+                    <p>I'm a software researcher and backend developer. I specialize in the development of dynamic web applications and the reverse engineering of niche applications.</p>
+
+                </ul>
+                <br>
+                <ul class="tree-view">
+                    <li>Where to find me:</li>
+                    <ul>
+                        <li><img src="images/file.ico"><a rel="me" href="files/Resume.pdf"> Resume</a></li>
+                        <li><img src="images/email.ico"><a href="mailto:poffinbargej@uwplatt.edu"> Email</a></li>
                         <li><img src="images/mastodon.ico"><a rel="me" href="https://mastodon.jemverse.xyz/@Jemma"> @jemma@mastodon.jemverse.xyz</a></li>
-                        <li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>
-                        <li><img src="images/twitter.ico"><a href="https://twitter.com/JayDaBirb"> @JayDaBirb</a></li>
+                        <!--<li><img src="images/matrix.ico"><a href="https://matrix.to/#/@jemma:jemverse.xyz"> @jemma@jemverse.xyz</a></li>-->
+                        <li><img src="images/twitter.ico"><a href="https://twitter.com/JemTanuki"> @JemTanuki</a></li>
                         <li><img src="images/discord.ico"><a> Jemma#6508</a></li>
                         <li><img src="images/github.ico"><a href="https://github.com/CaramelKat"> CaramelKat</a></li>
-                    </li>
-                    <br>
-                    <li><b>Projects I'm working on:</b></li>
+                    </ul>
+                    <li>Projects I'm working on:</li>
                     <li>
                         <details open>
-                            <summary><img src="images/pretendo.ico"><a href="https://pretendo.network" target="_blank"> <b>Pretendo Network</b></a></summary>
+                            <summary><img src="images/pretendo.ico"><a href="https://pretendo.network/" target="_blank"> Pretendo Network</a></summary>
                             <ul>
                                 <li>Open source replacement for the Nintendo Network on the 3DS and Wii U</li>
                                 <li><b>HTMl / CSS / NodeJS / MongoDB</b></li>
                             </ul>
                         </details>
                     </li>
-                    <br>
                     <li>
                         <details open>
                             <summary><img src="images/tesomas.ico"><a href="https://tesomas.camp" target="_blank"> <b>Tesomas.Camp</b></a></summary>
                             <ul>
                                 <li>PWA for a scout camp with an interactive map, and information about areas and events</li>
-                                <li><b>HTMl / CSS / NodeJS</b></li>
+                                <li><b>HTMl / CSS / PWA</b></li>
                             </ul>
                         </details>
                     </li>
                 </ul>
             </div>
         </div>
+        <br>
         <div class="window" id="cool">
             <div class="title-bar">
-                <div class="title-bar-text">
-                    Hire me ;).gif
-                </div>
-
+                <a href="files/Resume.pdf" target="_blank">
+                    <div class="title-bar-text">
+                        Hire me ;).gif
+                    </div>
+                </a>
                 <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
@@ -101,7 +98,9 @@
                 </div>
             </div>
             <div class="window-body">
-                <img src="images/cool.gif">
+                <a href="files/Resume.pdf" target="_blank">
+                    <img src="images/cool.gif">
+                </a>
             </div>
         </div>
     </div>
