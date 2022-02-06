@@ -41,19 +41,24 @@ body > div {
 }
 
 #hello {
-    top: 5vh;
+    top: 1vh;
     width: 35vw;
 }
 
 #about {
-    top: 18vh;
+    top: 12vh;
     width: 35vw;
 }
 
 #cool {
-    top: 8vh;
-    left: 40vw;
+    top: 30vh;
+    left: 37vw;
     width: 25vw;
+}
+
+#projects {
+    top: 1vh;
+    left: 37vw;
 }
 
 .user-icon {
@@ -73,7 +78,7 @@ body > div {
     .window {
         position: unset;
         top: 20px;
-        margin-bottom: 1em !important;
+        margin-bottom: 0.5em !important;
     }
     #hello {
         top: unset;
@@ -96,6 +101,9 @@ body > div {
         width: 20px;
         border-radius: 5px;
         vertical-align: middle;
+    }
+    .title-bar, .window, button, input, label, option, select, textarea, ul.tree-view {
+        font-family: Arial, serif;
     }
 }
 /*
