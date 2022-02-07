@@ -26,6 +26,7 @@ button {
     margin: 0.25em;
     border-radius: 0.5em;
     border: none;
+    cursor: pointer;
 }
 
 a {
@@ -111,7 +112,7 @@ img.user-icon {
     margin: 1em;
     object-fit: cover;
     border-radius: 30%;
-    box-shadow: 10px 10px 25px 0px rgb(0 0 0 / 30%);
+    box-shadow: 10px 10px 25px 0 rgb(0 0 0 / 30%);
 }
 
 #my-projects {
@@ -138,7 +139,7 @@ img.user-icon {
     width: 30vw;
     margin: 1em;
     border-radius: 1em;
-    box-shadow: 10px 10px 25px 0px rgb(0 0 0 / 30%);
+    box-shadow: 10px 10px 25px 0 rgb(0 0 0 / 30%);
 }
 
 #my-projects > div > h3 {
@@ -167,6 +168,7 @@ img.user-icon {
 .project > div {
     display: flex;
     flex-direction: row;
+    margin-bottom: -1em;
 }
 
 .project > div > img {
@@ -180,6 +182,7 @@ img.user-icon {
 
 .project > div > h4 {
     margin-right: 1em;
+    margin-top: 0;
 }
 
 
@@ -194,6 +197,7 @@ img.user-icon {
 
     header {
         width: revert;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
