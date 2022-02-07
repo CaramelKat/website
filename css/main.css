@@ -1,9 +1,40 @@
+:root {
+	--background-main: white;
+    --background-secondary: aliceblue;
+    --text-main: #6A6B6B;
+    --text-header: black;
+}
+
 body {
     margin: 0 auto 0 auto;
     font-family: Arial, serif;
-    color: #6A6B6B;
+    color: var(--text-main);
     display: flex;
     flex-direction: column;
+    background: var(--background-main);
+}
+
+button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    height: 5vh;
+    width: 25vw;
+    margin: 0.25em;
+    border-radius: 0.5em;
+    border: none;
+}
+
+a {
+    margin: auto;
+    color: var(--text-main);
+}
+
+h4 {
+    margin-top: -0.5em;
 }
 
 p > b {
@@ -16,7 +47,7 @@ header {
     align-content: space-around;
     justify-content: flex-start;
     height: 4em;
-    width: 80vw; 
+    width: 80vw;
     margin: auto;
 }
 
@@ -27,12 +58,14 @@ header > a, b {
 }
 
 header > b, div > h2 {
-    color: black;
+    color: var(--text-header);
+    margin-right: 1em;
 }
 
 header > a {
     margin-left: 1em;
-    color: gray;
+    margin-right: 1em;
+    color: var(--text-main);
     text-decoration: none;
 }
 
@@ -47,10 +80,10 @@ header > a:last-child:hover {
 }
 
 .background-stripe {
-    background-color: aliceblue;
+    background-color: var(--background-secondary);
 }
 
-#about-me {
+#about-me, #contact-me {
     margin: 0 auto 2em auto;
     display: flex;
     flex-direction: column;
@@ -67,17 +100,23 @@ header > a:last-child:hover {
     padding: 1em;
 }
 
+.description > h2 {
+    padding-left: 0.65em;
+    /* margin-right: auto; */
+    margin-bottom: -1em;
+}
+
 img.user-icon {
-    width: 15em;
-    height: 15em;
+    width: 20em;
+    height: 20em;
     margin: 1em;
     object-fit: cover;
     border-radius: 30%;
-    box-shadow: 20px 20px 25px 0px rgb(0 0 0 / 30%);
+    box-shadow: 10px 10px 25px 0px rgb(0 0 0 / 30%);
 }
 
 #my-projects {
-    margin: 0 auto 0 auto;
+    margin: 0 auto 1em auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -93,24 +132,33 @@ img.user-icon {
 
 #my-projects > div > div {
     padding: 1em;
-    width: 35em;
+    width: 30vw;
     margin: 1em;
     border-radius: 1em;
     box-shadow: 10px 10px 25px 0px rgb(0 0 0 / 30%);
 }
 
 #my-projects > div > h3 {
-    color: black;
+    color: var(--text-header);
     margin: 0.2em auto 0.2em auto;
 }
 
 .project {
     cursor: pointer;
+    background: var(--background-secondary);
     transition: all .2s ease-in-out; 
 }
 
 .project:hover {
     transform: scale(1.005);
+}
+
+.project > h3 {
+    color: var(--text-header);
+}
+
+.project > h4 {
+    color: cornflowerblue;
 }
 
 .project > div {
@@ -147,5 +195,83 @@ img.user-icon {
     header > b, header > a:last-child {
         display: none;
     }
-    
+
+    #my-projects > div > div {
+        width: 80vw;
+    }
+
+    .project > div > img {
+        width: 5em;
+        height: 5em;
+        border-radius: 1em;
+        margin-left: auto;
+        background: antiquewhite;
+    }
+
+    header > a {
+        margin-right: 1em;
+    }
+
+    #about-me {
+        max-width: 95vw;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+	--background-main: #152028;
+    --background-secondary: #202945;
+    --text-main: #c4c4c4;
+    --text-header: white;
+    }
+
+    .background-stripe {
+      color: white;
+    }
+}
+
+/* buttons */
+button > span {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+button > span:first-child {
+    margin-right: 0.25em;
+}
+
+.si {
+    font-weight: initial;
+}
+
+button.email {
+    background-color: #D14836;
+}
+button.mastodon {
+    background-color: #3c99dc;
+}
+button.matrix {
+    background-color: #03b381;
+}
+button.twitter {
+    background-color: #1DA1F2;
+}
+button.telegram {
+    background-color: #008ad1;
+}
+button.discord {
+    background-color: #5865F2;
+}
+button.github {
+    background-color: black;
+}
+button.kofi {
+    background-color: #F16061;
+}
+button.cashapp {
+    background-color: #00d54b;
 }
