@@ -34,7 +34,6 @@ a {
 }
 
 h4 {
-    margin-top: -0.5em;
 }
 
 p > b {
@@ -107,8 +106,8 @@ header > a:last-child:hover {
 }
 
 img.user-icon {
-    width: 20em;
-    height: 20em;
+    width: 25vh;
+    height: 25vh;
     margin: 1em;
     object-fit: cover;
     border-radius: 30%;
@@ -128,6 +127,10 @@ img.user-icon {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+#my-projects > h4, #contact-me > h4 {
+    margin-top: -1em;
 }
 
 #my-projects > div > div {
@@ -167,10 +170,11 @@ img.user-icon {
 }
 
 .project > div > img {
-    width: 10em;
-    height: 10em;
+    width: 7em;
+    height: 7em;
     border-radius: 2em;
     margin-left: auto;
+    margin-top: -3em;
     background: antiquewhite;
 }
 
@@ -190,6 +194,7 @@ img.user-icon {
 
     header {
         width: revert;
+        flex-wrap: wrap;
     }
 
     header > b, header > a:last-child {
@@ -204,12 +209,10 @@ img.user-icon {
         width: 5em;
         height: 5em;
         border-radius: 1em;
-        margin-left: auto;
-        background: antiquewhite;
     }
 
     header > a {
-        margin-right: 1em;
+        /* margin-right: 1em; */
     }
 
     #about-me {
