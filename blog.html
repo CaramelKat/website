@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jem's Website</title>
+    <link rel="stylesheet" href="css/90s.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.17/dist/98.css"/>
+    <script defer data-domain="jemsoftware.dev" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <link rel="me" href="https://mastodon.jemverse.xyz/@Jemma">
+    <style>
+        body {
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .window {
+            position: unset;
+            top: 20px;
+            margin-bottom: 0.5em !important;
+        }
+
+        .tree-view > button {
+            display: flex;
+            width: 100%;
+            height: 10vw;
+            cursor: pointer;
+            margin-bottom: 1em;
+        }
+
+        .tree-view > button > img {
+            height: 9.5vw !important;
+            width: auto;
+            margin: auto 1em auto -0.5em;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <div class="window" id="blog">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Blog Posts
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <ul class="tree-view">
+                    <button onclick="location.href='blog/hello-world.html'">
+                        <img src="https://yt3.ggpht.com/yti/APfAmoGlsmbJX2slACDlsJ4hN_WHm0bc7U4zi63paROGoQ=s108-c-k-c0x00ffffff-no-rj" alt="Blog Icon">
+                        <h4>Hello World </h4>
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

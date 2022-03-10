@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jem's Website</title>
+    <link rel="stylesheet" href="css/90s.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.17/dist/98.css"/>
+    <script defer data-domain="jemsoftware.dev" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <link rel="me" href="https://mastodon.jemverse.xyz/@Jemma">
+    <style>
+        body {
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .window {
+            position: unset;
+            top: 20px;
+            margin-bottom: 0.5em !important;
+        }
+        .tree-view > * {
+            font-family: Arial, sans-serif;
+            font-size: medium !important;
+        }
+        a {
+            text-decoration: underline !important;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <div class="window" id="blog">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Hello World! - 3/9/2022 by Jemma
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <ul class="tree-view">
+                    <div>
+                        <br>
+                        <b>Hello World!</b>
+                        <p>
+                            Hello World! My name is Jemma, if you got here I'm assuming you've either already read my website or already know me :p
+                            <br>
+                            <br>
+                            I saw my friend <a href="https://heyquark.com/">Ash</a> recently start blogging again, and I wanted to try getting into
+                            it myself (and this definitely isn't an excuse to avoid writing a giant paper due in 2 weeks lol)
+                            <br>
+                            <br>
+                            <b>So what do I write about?</b>
+                            <br>
+                            <br>
+                            That's where I'm stuck. I have a number of <a href="https://jemsoftware.dev#my-projects">projects</a> that I'm working on,
+                            and I'm not sure what I want to write about. So here's what I'm gonna do instead: I'm gonna ramble about some random school
+                            assignment I was stuck on recently, and we'll see if I actually keep doing this.
+                            <br>
+                            <br>
+                            <b>Background Info:</b>
+                            <br>
+                            <br>
+                            While I'm fairly experienced in programing in JS and other web technologies, C++ is not my strong suit. I'm currently in
+                            an intermediate software engineering class that has a semester long group project in C++. Our project is using the Steam
+                            web API to get information about games, and keep logs about your playtime and showing statistics about your library.
+                            <br>
+                            <br>
+                            Okay, that's pretty straight forward, what's the problem?
+                            <br>
+                            <br>
+                            <u>I'm a dumbass</u>
+                            <br>
+                            <br>
+                            So networking support in C++ is not something I've played around with too much. I once attempted to create a web server on a
+                            Wii U (which unfortunately that code is long gone -_-), but aside from that I knew nothing. So I naively googled network
+                            requests in C++ and ran into the <a href="https://docs.libcpr.org/">cpr</a> library. Okay, great! Let's just slap and in and call it good and-
+                            <br>
+                            <br>
+                            Oh wait. My group members don't have their own PC's to work on the project. So we can't install dependencies on the school computers.
+                            (not to mention the fact that we're stuck using Visual Studio & Windows forms, so switching to cmake would be a pain at this point)
+                            <br>
+                            <br>
+                            <b>My Implementation:</b>
+                            <br>
+                            <br>
+                            At this point I realized that I would likely have to use a built-in system library and started doing some digging. What I came across
+                            was <a href="https://docs.microsoft.com/en-us/windows/win32/winhttp/about-winhttp">WinHTTP</a>, an HTTP/2 interface. It's a pretty neat,
+                            it's got support for IPv6 and the WebSocket protocol, but it's extremely high level, so I have to sit down and hammer out my own implementation
+                            for GET and POST requests.
+                            <br>
+                            <br>
+                            I actually got pretty far into my own (frankly terrible) implementation, before running into <a href="https://github.com/shaovoon/winhttp_examples">this</a>
+                            example implementation that was better than mine in every way. So took it and turned it into a nice library that I can use in my projects.
+                            <br>
+                            <br>
+                            So now making requests to the Steam web API is as simple as this:
+                            <img src="https://i.imgur.com/azTh25p.png">
+                            <img src="https://i.imgur.com/rTungIv.png">
+                            <br>
+                            <br>
+                            <b>Wrapping Up</b>
+                            <br>
+                            <br>
+                            Unfortunately I can't share the source code for any of this at the moment as this is still an in-process assignment, and I'd rather not get
+                            myself in trouble. But this was honestly really fun to write (even if it was just a whole lot of nothing) and I do want to write more posts
+                            about my personal projects in the future.
+                            <br>
+                            <br>
+                            Thanks for reading if you made it this far, have a cookie :) 🍪
+                        </p>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

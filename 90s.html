@@ -10,6 +10,7 @@
 </head>
 <body>
 <div>
+    <a href="/blog/hello-world.html"><img src="https://i.picasion.com/gl/92/fEyg.gif" width="477" height="30" border="0" alt="https://picasion.com/gl/fEyg/" /></a><br/>
     <div>
         <div class="window" id="hello">
             <div class="title-bar">
@@ -75,11 +76,9 @@
         <br>
         <div class="window" id="projects">
             <div class="title-bar">
-                <a href="files/Resume.pdf" target="_blank">
-                    <div class="title-bar-text">
-                        My Projects
-                    </div>
-                </a>
+                <div class="title-bar-text">
+                    My Projects
+                </div>
                 <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
@@ -131,11 +130,9 @@
         <br>
         <div class="window" id="cool">
             <div class="title-bar">
-                <a href="files/Resume.pdf" target="_blank">
-                    <div class="title-bar-text">
-                        Hire me ;).gif
-                    </div>
-                </a>
+                <div class="title-bar-text">
+                    Hire me ;).gif
+                </div>
                 <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
@@ -148,6 +145,7 @@
                 </a>
             </div>
         </div>
+        <img src="https://www.cameronsworld.net/img/content/10/7.gif" id="gif">
     </div>
 </div>
 <script>
@@ -155,6 +153,8 @@
     dragElement(document.getElementById('about'))
     dragElement(document.getElementById('cool'))
     dragElement(document.getElementById('projects'))
+
+    var index = 5;
 
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -169,6 +169,7 @@
             e.preventDefault();
             pos3 = e.clientX;
             pos4 = e.clientY;
+            elmnt.style.zIndex = ++index;
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
         }

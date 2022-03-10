@@ -14,12 +14,14 @@
 }
 
 body {
-    background: var(--background);
+    /*background: var(--background);*/
+    background-image: url('https://www.cameronsworld.net/img/content/26/bg.png');
     color: var(--text);
 }
 
 img {
     width: 100%;
+    height: auto;
 }
 
 li > img, summary > img {
@@ -41,34 +43,48 @@ body > div {
 }
 
 #hello {
-    top: 1vh;
+    top: 8vh;
     width: 35vw;
+    z-index: 5;
 }
 
 #about {
-    top: 12vh;
+    top: 20vh;
+    left: 5vw;
     width: 35vw;
 }
 
 #cool {
-    top: 30vh;
-    left: 37vw;
+    top: 43vh;
+    left: 42vw;
     width: 25vw;
 }
 
 #projects {
-    top: 1vh;
-    left: 37vw;
+    top: 12vh;
+    left: 40vw;
+}
+
+#blog {
+    max-width: 1024px;
+    margin: auto !important;
 }
 
 .user-icon {
     width: 50%;
 }
 
+#gif {
+  bottom: 3vw;
+  right: 9vw;
+  position: absolute;
+  width: 12vw;
+  z-index: 1;
+}
+
 @media (max-width: 1024px) {
     body {
         width: 100%;
-        background: var(--background);
         max-width: 100vw;
         position: relative;
         overflow-x: hidden;
