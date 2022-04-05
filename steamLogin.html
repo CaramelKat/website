@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>Undecided Steam Login</title>
+  <style>
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1b2838;
+    }
+
+    #header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba( 0, 0, 0, 0.2 );
+      width: 100%;
+      color: white;
+      padding: 5vh;
+    }
+
+    #header > h2 {
+      color: #67c1f5;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<div id="header" style="display: none">
+  <h2>Copy the ID below into the Undecided Application:</h2>
+  <h3></h3>
+</div>
+<form action="https://steamcommunity.com/openid/login" method="post" id="login" style="display: none">
+  <input type="hidden" name="openid.identity" value="http://specs.openid.net/auth/2.0/identifier_select">
+  <input type="hidden" name="openid.claimed_id" value="http://specs.openid.net/auth/2.0/identifier_select">
+  <input type="hidden" name="openid.ns" value="http://specs.openid.net/auth/2.0">
+  <input type="hidden" name="openid.mode" value="checkid_setup">
+  <input type="hidden" name="openid.realm" value="https://jemsoftware.dev/steamLogin.html">
+  <input type="hidden" name="openid.return_to" value="https://jemsoftware.dev/steamLogin.html?page=graph">
+  <button type="submit" id="logon"><img src="https://community.akamai.steamstatic.com/public/images/signinthroughsteam/sits_02.png"></button>
+</form>
+
+</body>
+<script>
+  window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('openid.claimed_id') !== null) {
+      let steamID = params.get('openid.claimed_id').substring(37);
+      if(steamID !== null) {
+        document.getElementById('login').style.display = 'none';
+        let header = document.getElementById('header');
+        header.style.display = 'flex';
+        header.children[1].innerHTML = steamID;
+      }
+    }
+    else {
+      document.getElementById('logon').click();
+      document.getElementById('login').style.display = 'flex';
+    }
+  }
+</script>
+</html>
