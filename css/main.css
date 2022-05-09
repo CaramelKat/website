@@ -22,11 +22,12 @@ button {
     font-weight: bold;
     color: white;
     height: 5vh;
-    width: 25vw;
+    width: 24vw;
     margin: 0.25em;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
+    max-width: 85vw;
 }
 
 a {
@@ -47,7 +48,7 @@ header {
     align-content: space-around;
     justify-content: flex-start;
     height: 4em;
-    width: 80vw;
+    width: 75vw;
     margin: auto;
 }
 
@@ -87,7 +88,7 @@ header > a:last-child:hover {
     margin: 0 auto 2em auto;
     display: flex;
     flex-direction: column;
-    max-width: 80vw;
+    max-width: 75vw;
 }
 
 .description {
@@ -120,7 +121,7 @@ img.user-icon {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 80vw;
+    max-width: 75vw;
 }
 
 .content {
@@ -215,11 +216,7 @@ img.user-icon {
         border-radius: 1em;
     }
 
-    header > a {
-        /* margin-right: 1em; */
-    }
-
-    #about-me {
+    #about-me, #contact-me {
         max-width: 95vw;
     }
 
@@ -281,4 +278,8 @@ button.kofi {
 }
 button.cashapp {
     background-color: #00d54b;
+}
+
+button.linkedin {
+    background-color: #0072b0;
 }
