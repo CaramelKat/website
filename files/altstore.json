@@ -11,10 +11,10 @@
       "versionDate": "2022-07-20T20:43:00+02:00",
       "versionDescription": "This release including a number of improvements:\n\n    -Support for downloading videos and photos to your photo library\n    -Dynamic tag suggestions from the e621 API\n    -Toggle to switch between e621 and e926 without installing different versions of the app\n    -Added field to input account username, to be used in a later release",
       "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.2/Tanukis_Stash.ipa",
-      "localizedDescription": "An Open Source e621/e926 client for iOS",
+      "localizedDescription": "The worlds first e621 client for iOS, iPadOS, and macOS built with SwiftUI\n\nFeatures\n\n    - Infinite scrolling\n    - Post details page\n    - Search for tags\n    - Dynamic tag suggestions\n - Downloading media\n - Supports most media formats\n",
       "iconURL": "https://jemsoftware.dev/images/tanuki.png",
       "tintColor": "b2929c",
-      "size": 22400000,
+      "size": 2800000,
       "screenshotURLs": [
         "https://camo.githubusercontent.com/338ee68b3b728283586b6c90d676be80ab5326f92f8e2a3ec21eb0884f37b6af/68747470733a2f2f692e696d6775722e636f6d2f70774673616a4d2e6a7067",
         "https://camo.githubusercontent.com/4b0de38ce0eec570406bf30a9d36356b5cec888ac93285e48348e05b25aa4b84/68747470733a2f2f692e696d6775722e636f6d2f597151677344492e706e67",
