@@ -6,7 +6,27 @@ html, body {
     align-items: center;
     height: 100vh;
 }
-
+.display {
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%;
+}
+.app {
+    /*! height: 100vh; */
+    background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /*! align-items: center; */
+}
+/* Status Bar & Content */
 .statusbar {
     background-image: linear-gradient(#4f6a8a, #435b7a);
     display: flex;
@@ -23,29 +43,19 @@ html, body {
 .statusbar > h3 {
     margin: 0;
 }
-
 #carrier {
     left: 5px;
     position: absolute;
 }
-
 .wifi {
     left: 3em;
     position: absolute;
 }
-
 #battery {
     right: 5px;
     position: absolute;
 }
-.app {
-    /*! height: 100vh; */
-    background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
+/* Banner & Content */
 .banner {
     background-image: linear-gradient(#bfcddd, #597496);
     display: flex;
@@ -59,6 +69,9 @@ html, body {
     z-index: 5;
     height: 3.5em;
     align-items: center;
+}
+.banner > h2 {
+    margin: 0;
 }
 .back-nav-filter {
     filter: url(#round);
@@ -80,19 +93,7 @@ html, body {
     box-shadow: inset 0 0 3px #323c48;
     clip-path: polygon(25% 0px, 100% 0px, 100% 100%, 25% 100%, 0px 50.00%);
 }
-.display {
-    width: 100vw;
-    height: 100vh;
-    background-size: 100%;
-}
-
-.icon-list img {
-    width: 45px;
-    height: 45px;
-    margin-right: 15px;
-    border-radius: 10px;
-    margin-left: 10px;
-}
+/* List Types */
 .list {
     list-style: none;
     margin: 14px 14px 14px 14px;
@@ -112,10 +113,14 @@ html, body {
     height: 4.05em;
     cursor: pointer;
 }
+.list li:first-child {
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
 .list li:last-child {
     border: none;
+    border-radius: 0 0 10px 10px;
 }
-
 .arrow-list > li:after {
     border: solid #7a7a7a;
     border-width: 0 4px 4px 0;
@@ -126,14 +131,26 @@ html, body {
     position: absolute;
     right: 20px;
 }
-
-.content {
-    position: relative;
-    z-index: 1;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    /*! align-items: center; */
+.icon-list img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.list li:hover {
+    background-image: linear-gradient(#3088cd, #0164e9);
+    color: white;
+}
+.arrow-list > li:hover:after {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 5px;
+    content: " ";
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 20px;
 }
 p {
     display: flex;
@@ -145,7 +162,92 @@ p {
     margin: 5px 14px 5px 14px;
     font-weight: bold;
 }
-
-.banner > h2 {
-    margin: 0;
+/* On/Off Toggle */
+:root input[type="checkbox"] {
+    position : absolute;
+    opacity : 0;
+}
+:root input[type="checkbox"].ios-switch + div {
+    display : inline-block;
+    vertical-align : middle;
+    width : 3em;
+    height : 1em;
+    border : rgba(0, 0, 0, 0.3) solid 1px;
+    border-radius : 999px;
+    margin : 0 0.5em;
+    background : white;
+    background-image : linear-gradient(rgba(0, 0, 0, 0.1), transparent), linear-gradient(90deg, hsl(210, 90%, 60%) 50%, transparent 50%);
+    background-size : 200% 100%;
+    background-position : 100% 0;
+    background-origin : border-box;
+    background-clip : border-box;
+    overflow : hidden;
+    transition-duration : 0.4s;
+    transition-property : padding, width, background-position, text-indent;
+    box-shadow : 0 0.1em 0.1em rgba(0, 0, 0, 0.2) inset, 0 0.45em 0 0.1em rgba(0, 0, 0, 0.05) inset;
+    font-size : 150%;
+}
+:root input[type="checkbox"].ios-switch:checked + div {
+    padding-left : 2em;
+    width : 1em;
+    background-position : 0 0;
+}
+:root input[type="checkbox"].ios-switch + div:before {
+    content : 'On';
+    float : left;
+    width : 1.65em;
+    height : 1.65em;
+    margin : -0.1em;
+    border : rgba(0, 0, 0, 0.35) solid 1px;
+    border-radius : inherit;
+    background : white;
+    background-image : linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+    box-shadow : 0 0.1em 0.1em 0.1em hsla(0, 0%, 100%, 0.8) inset, 0 0 0.5em rgba(0, 0, 0, 0.3);
+    color : white;
+    text-shadow : 0 -1px 1px rgba(0, 0, 0, 0.3);
+    text-indent : -2.5em;
+}
+:root input[type="checkbox"].ios-switch:active + div:before {
+    background-color : #eee;
+}
+:root input[type="checkbox"].ios-switch + div:before, :root input[type="checkbox"].ios-switch + div:after {
+    font : bold 60%/1.9 sans-serif;
+    text-transform : uppercase;
+}
+:root input[type="checkbox"].ios-switch + div:after {
+    content : 'Off';
+    float : left;
+    text-indent : 0.5em;
+    color : rgba(0, 0, 0, 0.45);
+    text-shadow : none;
+}
+label {
+    position : relative;
+    display : block;
+    padding : 0.8em;
+    border : silver solid 1px;
+    border-top-width : 0;
+    background : white;
+    font : bold 110% sans-serif;
+}
+label:first-of-type {
+    border-top-width : 1px;
+    border-radius : 0.6em 0.6em 0 0;
+}
+label:last-of-type {
+    border-radius : 0 0 0.6em 0.6em;
+    box-shadow : 0 1px hsla(0, 0%, 100%, 0.8);
+}
+/* Inner content size fix */
+.content > * {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (min-width: 500px) {
+    .content > * {
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
