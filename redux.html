@@ -64,34 +64,48 @@
                 </div>
                 <h1 class="settings-header">Contact Me:</h1>
                 <ul class="wrapper list arrow-list icon-list">
-                    <li onclick="location.href='https://www.linkedin.com/in/jemma-poffinbarger'">
-                        <img src="/images/iOS/linkedin.png" alt="Linked In icon">
-                        <h2>LinkedIn</h2>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jemma-poffinbarger">
+                            <img src="/images/iOS/linkedin.png" alt="Linked In icon">
+                            <h2>LinkedIn</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='https://github.com/CaramelKat'" class="shine">
-                        <img src="/images/iOS/github.png" alt="GitHub icon">
-                        <h2>GitHub</h2>
+                    <li class="shine">
+                        <a href="https://github.com/CaramelKat">
+                            <img src="/images/iOS/github.png" alt="GitHub icon">
+                            <h2>GitHub</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='mailto:jemma@jemsoftware.dev'">
-                        <img src="/images/iOS/mail.png" alt="e-mail icon">
-                        <h2>E-Mail</h2>
+                    <li>
+                        <a href="mailto:jemma@jemsoftware.dev">
+                            <img src="/images/iOS/mail.png" alt="e-mail icon">
+                            <h2>E-Mail</h2>
+                        </a>
                     </li>
 
-                    <li onclick="location.href='https://twitter.com/JemTanuki'">
-                        <img src="/images/iOS/twitter.png" alt="twitter icon">
-                        <h2>Twitter</h2>
+                    <li>
+                        <a href="https://twitter.com/JemTanuki">
+                            <img src="/images/iOS/twitter.png" alt="twitter icon">
+                            <h2>Twitter</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='https://chitter.xyz/@Jemma'" class="shine">
-                        <img src="/images/iOS/mastodon.png" alt="mastodon icon">
-                        <h2>Mastodon</h2>
+                    <li class="shine">
+                        <a href="https://chitter.xyz/@Jemma">
+                            <img src="/images/iOS/mastodon.png" alt="mastodon icon">
+                            <h2>Mastodon</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='https://matrix.to/#/@jemma:jemverse.xyz'" class="shine">
-                        <img src="/images/iOS/element.png" alt="element icon">
-                        <h2>Matrix</h2>
+                    <li class="shine">
+                        <a href="https://matrix.to/#/@jemma:jemverse.xyz">
+                            <img src="/images/iOS/element.png" alt="element icon">
+                            <h2>Matrix</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='https://t.me/JemTanuki'">
-                        <img src="/images/iOS/telegram.png" alt="telegram icon">
-                        <h2>Telegram</h2>
+                    <li>
+                        <a href="https://t.me/JemTanuki">
+                            <img src="/images/iOS/telegram.png" alt="telegram icon">
+                            <h2>Telegram</h2>
+                        </a>
                     </li>
                     <li class="shine">
                         <img src="/images/iOS/discord.png" alt="Discord icon">
@@ -100,13 +114,17 @@
                 </ul>
                 <h1 class="settings-header">Consider throwing me a coin:</h1>
                 <ul class="wrapper list arrow-list icon-list">
-                    <li onclick="location.href='https://cash.app/$JemTanuki'" class="shine">
-                        <img src="/images/iOS/cashapp.png" alt="Cash App icon">
-                        <h2>Cash App</h2>
+                    <li class="shine">
+                        <a href="https://cash.app/$JemTanuki">
+                            <img src="/images/iOS/cashapp.png" alt="Cash App icon">
+                            <h2>Cash App</h2>
+                        </a>
                     </li>
-                    <li onclick="location.href='https://ko-fi.com/jemtanuki'" class="shine">
-                        <img src="/images/iOS/kofi.jpeg" alt="Ko-Fi icon">
-                        <h2>Ko-Fi</h2>
+                    <li class="shine">
+                        <a href="https://ko-fi.com/jemtanuki">
+                            <img src="/images/iOS/kofi.jpeg" alt="Ko-Fi icon">
+                            <h2>Ko-Fi</h2>
+                        </a>
                     </li>
                 </ul>
                 <p>Copyright 2022 - Jemma Poffinbarger</p>
@@ -124,15 +142,11 @@
     </defs>
 </svg>
 <script>
-    let showDots = true;
     function ShowTime() {
         let dt = new Date();
         let time = dt.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'})
-        if(!showDots)
-            time = time.replace(':', '  ');
-        showDots = !showDots;
         document.getElementById("time").innerHTML = time;
-        window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Sec
+        window.setTimeout("ShowTime()", 1000);
     }
     ShowTime()
 </script>

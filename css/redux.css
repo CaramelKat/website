@@ -5,6 +5,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
 }
 .display {
     width: 100vw;
@@ -12,7 +13,6 @@ html, body {
     background-size: 100%;
 }
 .app {
-    /*! height: 100vh; */
     background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
     position: relative;
     display: flex;
@@ -126,7 +126,6 @@ header {
     border-bottom: 2px solid #d5d5d5;
     position: relative;
     height: 4.05em;
-    cursor: pointer;
 }
 .list li:first-child {
     border-radius: 10px 10px 0 0;
@@ -283,7 +282,15 @@ Button.settings {
     margin-right: 45px;
 }
 .list h2 {
-    margin: 5px 0 0 0;
+}
+
+.list > li > a {
+    display: flex;
+    text-decoration: none;
+    color: unset;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
 }
 
 .settings-header {
