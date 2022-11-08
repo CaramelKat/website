@@ -18,6 +18,12 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
 .content {
     position: relative;
     z-index: 1;
@@ -25,6 +31,7 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 92vh;
+    margin-top: 90px;
 }
 /* Status Bar & Content */
 
@@ -53,10 +60,14 @@ html, body {
     position: absolute;
 }
 #battery {
-    right: 5px;
+    right: 34px;
     position: absolute;
 }
-
+#battery-icon {
+    right: 6px;
+    top: 3px;
+    position: absolute;
+}
 .wrapper {
     border: 1px solid #9ea2a8;
     border-radius: 15px;
@@ -164,6 +175,7 @@ html, body {
     text-align: center;
     margin: 5px 14px 5px 14px;
     font-weight: bold;
+    user-select: none;
 }
 /* On/Off Toggle */
 :root input[type="checkbox"] {
@@ -280,6 +292,7 @@ Button.settings {
     margin-bottom: 0;
     font-size: 1.5em;
     text-shadow: 2px 1.5px 0 #e2e4f0b5;
+    user-select: none;
 }
 
 .icon-list > li.shine::before {
@@ -297,6 +310,7 @@ Button.settings {
 .left-image-right-content {
     display: flex;
     padding: 10px;
+    user-select: none;
 }
 
 
@@ -304,6 +318,7 @@ Button.settings {
     width: 125px;
     height: 125px;
     border-radius: 10px;
+    user-select: none;
 }
 
 .left-image-right-content > .info {
@@ -316,12 +331,12 @@ Button.settings {
     margin: 0;
     font-size: 1.5em;
     padding-bottom: 5px;
-    padding-top: 5px;
+    padding-top: 0;
 }
 
 .left-image-right-content > .info > h4 {
     margin: 0;
-    padding-top: 4px;
+    padding-top: 0;
     font-size: 1.1em;
     font-weight: normal;
     color: #6c6c6c;
@@ -335,6 +350,7 @@ Button.settings {
     margin: 14px;
     font-weight: normal;
     font-size: 1.0em;
+    user-select: none;
 }
 
 @media screen and (min-width: 500px) {
@@ -345,5 +361,12 @@ Button.settings {
     }
     .left-image-right-content > .info {
         padding: 10px;
+    }
+    .left-image-right-content > .info > h2 {
+        padding-top: 5px;
+    }
+
+    .left-image-right-content > .info > h4 {
+        padding-top: 4px;
     }
 }
