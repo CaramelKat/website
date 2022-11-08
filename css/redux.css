@@ -114,7 +114,6 @@ html, body {
     cursor: pointer;
 }
 .list li:first-child {
-    border: none;
     border-radius: 10px 10px 0 0;
 }
 .list li:last-child {
@@ -244,10 +243,58 @@ label:last-of-type {
     margin-left: auto;
     margin-right: auto;
 }
+
+Button.settings {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    height: 4.05em;
+    cursor: pointer;
+    border-radius: 10px;
+    background: white;
+    justify-content: center;
+    border: 1px solid #9ea2a8;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
 @media screen and (min-width: 500px) {
     .content > * {
         width: 450px;
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.list > h2:last-child {
+    color: #3b5469;
+}
+.list > li > h2:nth-of-type(2) {
+    color: #3b5469;
+    font-weight: lighter;
+    margin-left: auto;
+    margin-right: 45px;
+}
+.list h2 {
+    margin: 5px 0 0 0;
+}
+
+.settings-header {
+    color: #3b577d;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.8em;
+    text-shadow: 2px 1.5px 0 #e2e4f0b5;
+}
+
+.icon-list > li.shine::before {
+    content: "";
+    width: 45px;
+    height: 45px;
+    background-image: linear-gradient(transparent, white, white);
+    position: absolute;
+    left: 10px;
+    opacity: 30%;
+    border-radius: 10px;
+    clip-path: ellipse(50px 40px at 50% -35%);
 }
