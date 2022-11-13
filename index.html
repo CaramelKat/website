@@ -16,98 +16,241 @@
     <meta name="description" content="Howdy! My name is Jemma! I'm a full-stack developer currently attending the University of Wisconsin: Platteville. Most of my work consists of the reverse engineering and reimplementation of different services and APIs, as well as the development of smaller niche applications.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" sizes="32x32" href="images/pfp32.jpg">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v5/font/simple-icons.min.css" type="text/css">
+    <link rel="stylesheet" href="css/redux.css">
     <link rel="me" href="https://chitter.xyz/@Jemma">
     <script defer data-domain="jemsoftware.dev" src="https://plausible.io/js/plausible.outbound-links.js"></script>
 </head>
 <body>
-    <header>
-        <b>Jemma Poffinbarger</b>
-        <a href="#">Home</a>
-        <a href="#about-me">About Me</a>
-        <a href="#my-projects">Projects</a>
-        <a href="#contact-me">Contact me</a>
-        <a href="files/Resume.pdf">Resume</a>
-        <a href="blog.html">Blog</a>
-        <a href="90s.html">Classic Site</a>
-    </header>
-    <div class="background-stripe">
-        <div id="about-me">
-        <h2>About Me</h2>
-        <div class="content">
-            <img class="user-icon" src="https://github.com/caramelKat.png" alt="">
-            <div class="description">
-                <h2>Howdy! My name is Jemma!</h2>
-                <p>
-                    I'm a full-stack developer currently attending the <b><a href="https://uwplatt.edu/"> University of Wisconsin: Platteville.</a></b>
-                    Most of my work consists of the reverse engineering and reimplementation of different services and APIs, as well as the development of smaller niche applications.
-                    <br><br>
-                    While most of my work is with web applications, I have experience developing for iOS, Android, Windows, and more.
-                </p>
+    <div class="display">
+        <div class="app">
+            <header>
+                <div class="statusbar">
+                    <h3 id="carrier">iPod</h3>
+                    <div class="wifi">
+                        <svg class="svg-icon" style="width: 1.5em; height: 1.5em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 192c-163 0-326 67.2-443 176.6-6.6 6-6.8 16.2-0.6 22.8l53.4 55.8c6.2 6.6 16.6 6.8 23.2 0.6 46.6-43.2 99.8-77.6 158.6-102 66-27.6 136.2-41.4 208.6-41.4s142.6 14 208.6 41.4c58.8 24.6 112 58.8 158.6 102 6.6 6.2 17 6 23.2-0.6l53.4-55.8c6.2-6.4 6-16.6-0.6-22.8C838 259.2 675 192 512 192z"/><path d="M226.4 555l57.2 56.6c6.2 6 16 6.4 22.4 0.6 56.6-50.2 129.2-77.8 205.8-77.8s149.2 27.4 205.8 77.8c6.4 5.8 16.2 5.4 22.4-0.6l57.2-56.6c6.6-6.6 6.4-17.2-0.6-23.4-75-67.8-175.2-109.2-285-109.2s-210 41.4-285 109.2c-6.6 6.2-6.8 16.8-0.2 23.4zM512 648.4c-46.8 0-89.2 19.6-118.8 51-6 6.4-5.8 16.2 0.4 22.4l106.8 105.4c6.4 6.4 16.8 6.4 23.2 0l106.8-105.4c6.2-6.2 6.4-16 0.4-22.4-29.6-31.2-72-51-118.8-51z"/></svg>
+                    </div>
+                    <h3 id="time">7:02 PM</h3>
+                    <h3 id="battery">69%</h3>
+                    <div id="battery-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-battery" stroke-width="1" stroke="black" style="width: 1.5em;height: 1.5em;vertical-align: middle;overflow: hidden;stroke: currentColor;color: #bbc7d3;" width="32" viewBox="0 0 20 25" height="20">
+                            <rect xmlns="http://www.w3.org/2000/svg" ry="0" rx="0" width="12" y="7.75" fill="currentColor" x="1.5" height="7.5"/>
+                            <rect xmlns="http://www.w3.org/2000/svg" y="6" ry="0" rx="0" width="20" x="0" height="11"/>
+                            <rect xmlns="http://www.w3.org/2000/svg" height="4" width="2" rx="1" ry="0" x="20" y="10"/></svg>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div id="banner-0">
+                        <div class="back-nav-filter" style="display: none">
+                            <button class="back-nav">General</button>
+                        </div>
+                        <h2>About Me</h2>
+                    </div>
+                    <div id="banner-1" class="right">
+                        <div class="back-nav-filter">
+                            <button class="back-nav" onclick="switchScreen()">About Me</button>
+                        </div>
+                        <h2>Projects</h2>
+                    </div>
+                </div>
+            </header>
+            <div class="content" id="screen-0">
+                <div class="wrapper">
+                    <div class="left-image-right-content">
+                        <img src="https://github.com/caramelkat.png" alt="">
+                        <div class="info">
+                            <h2>Jemma Poffinbarger</h2>
+                            <h4>Full-Stack Dev & CS Student</h4>
+                            <h4>21MB</h4>
+                        </div>
+                    </div>
+                    <p>
+                        I'm a full-stack developer currently attending the <b><a href="https://uwplatt.edu/"> University of Wisconsin: Platteville.</a></b>
+                        Most of my work consists of the reverse engineering and reimplementation of different services and APIs, as well as the development of smaller niche applications.
+                        <br><br>
+                        While most of my work is with web applications, I have experience developing for iOS, Android, Windows, and more.
+                    </p>
+                    <button onclick="switchScreen()">View my Projects</button>
+                </div>
+                <h1 class="settings-header">Contact Me:</h1>
+                <ul class="wrapper list arrow-list icon-list">
+                    <li>
+                        <a href="https://www.linkedin.com/in/jemma-poffinbarger">
+                            <img src="/images/iOS/linkedin.png" alt="Linked In icon">
+                            <h2>LinkedIn</h2>
+                        </a>
+                    </li>
+                    <li class="shine">
+                        <a href="https://github.com/CaramelKat">
+                            <img src="/images/iOS/github.png" alt="GitHub icon">
+                            <h2>GitHub</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:jemma@jemsoftware.dev">
+                            <img src="/images/iOS/mail.png" alt="e-mail icon">
+                            <h2>E-Mail</h2>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://twitter.com/JemTanuki">
+                            <img src="/images/iOS/twitter.png" alt="twitter icon">
+                            <h2>Twitter</h2>
+                        </a>
+                    </li>
+                    <li class="shine">
+                        <a href="https://chitter.xyz/@Jemma">
+                            <img src="/images/iOS/mastodon.png" alt="mastodon icon">
+                            <h2>Mastodon</h2>
+                        </a>
+                    </li>
+                    <li class="shine">
+                        <a href="https://matrix.to/#/@jemma:jemverse.xyz">
+                            <img src="/images/iOS/element.png" alt="element icon">
+                            <h2>Matrix</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/JemTanuki">
+                            <img src="/images/iOS/telegram.png" alt="telegram icon">
+                            <h2>Telegram</h2>
+                        </a>
+                    </li>
+                    <li class="shine">
+                        <img src="/images/iOS/discord.png" alt="Discord icon">
+                        <h2>Jemma#6508</h2>
+                    </li>
+                </ul>
+                <h1 class="settings-header">Consider throwing me a coin:</h1>
+                <ul class="wrapper list arrow-list icon-list">
+                    <li class="shine">
+                        <a href="https://cash.app/$JemTanuki">
+                            <img src="/images/iOS/cashapp.png" alt="Cash App icon">
+                            <h2>Cash App</h2>
+                        </a>
+                    </li>
+                    <li class="shine">
+                        <a href="https://ko-fi.com/jemtanuki">
+                            <img src="/images/iOS/kofi.jpeg" alt="Ko-Fi icon">
+                            <h2>Ko-Fi</h2>
+                        </a>
+                    </li>
+                </ul>
+                <p>Copyright 2022 - Jemma Poffinbarger</p>
+            </div>
+            <div class="content right" id="screen-1">
+                <div class="wrapper">
+                    <div class="left-image-right-content">
+                        <img src="images/pretendo.png" alt="">
+                        <div class="info">
+                            <h2>Pretendo Network</h2>
+                            <h4>HTML / CSS / NodeJS / MongoDB</h4>
+                            <h4>2018 - Present</h4>
+                        </div>
+                    </div>
+                    <p>
+                        Open source replacement for the Nintendo Network on the 3DS and Wii U
+                    </p>
+                    <a href="https://Pretendo.Network">
+                        <button>Learn More</button>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <div class="left-image-right-content">
+                        <img src="images/tesomas.png" alt="">
+                        <div class="info">
+                            <h2>Tesomas.Camp</h2>
+                            <h4>HTML / CSS / PWA</h4>
+                            <h4>2019 - 2020</h4>
+                        </div>
+                    </div>
+                    <p>
+                        Progressive Web App for a scout camp with an interactive map, information about activities, and more
+                    </p>
+                    <a href="https://Tesomas.Camp">
+                        <button>Learn More</button>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <div class="left-image-right-content">
+                        <img src="images/tanuki.png" alt="">
+                        <div class="info">
+                            <h2>Tanuki's Stash</h2>
+                            <h4>Swift / SwiftUI</h4>
+                            <h4>2020</h4>
+                        </div>
+                    </div>
+                    <p>
+                        A native app for browsing a furry image board site on iOS, iPadOS, and macOS
+                    </p>
+                    <a href="https://www.github.com/caramelkat/tanukis-stash">
+                        <button>Learn More</button>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <div class="left-image-right-content">
+                        <img src="images/caramel.png" alt="">
+                        <div class="info">
+                            <h2>Caramel Bot</h2>
+                            <h4>NodeJS / Discord.js / MongoDB</h4>
+                            <h4>2020 - Present</h4>
+                        </div>
+                    </div>
+                    <p>
+                        Basic, no-nonsense Discord bot for reaction roles and more
+                    </p>
+                    <a href="https://www.github.com/caramelkat/caramelbot3.0">
+                        <button>Learn More</button>
+                    </a>
+                </div>
+                <ul class="wrapper list arrow-list">
+                    <li>
+                        <a href="https://github.com/caramelkat">
+                            <h3>View more projects on my GitHub</h3>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    </div>
-    <div id="my-projects">
-        <h2>My Projects</h2>
-        <h4>Some of my Recent Work</h4>
-        <div class="content">
-            <div class="project" onclick="location.href='https://Pretendo.Network'">
-            <h3>Pretendo Network</h3>
-            <div>
-                <h4>Open source replacement for the Nintendo Network on the 3DS and Wii U</h4>
-                <img src="images/pretendo.png" alt="">
-            </div>
-            <h4><b>HTML / CSS / NodeJS / MongoDB</b></h4>
-            </div>
-            <div class="project" onclick="location.href='https://Tesomas.Camp'">
-                <h3>Tesomas.Camp</h3>
-                <div>
-                    <h4>Progressive Web App for a scout camp with an interactive map, information about activities, and more</h4>
-                    <img src="images/tesomas.png" alt="">
-                </div>
-                <h4><b>HTMl / CSS / PWA</b></h4>
-            </div>
-            <div class="project" onclick="location.href='https://www.github.com/caramelkat/tanukis-stash'">
-                <h3>Tanuki's Stash</h3>
-                <div>
-                    <h4>A native app for browsing a furry image board site on iOS, iPadOS, and macOS</h4>
-                    <img src="images/tanuki.png" alt="">
-                </div>
-                <h4><b>Swift / SwiftUI</b></h4>
-            </div>
-            <div class="project" onclick="location.href='https://www.github.com/caramelkat/caramelbot3.0'">
-                <h3>Caramel Bot</h3>
-                <div>
-                    <h4>Basic, no-nonsense Discord bot for reaction roles and more</h4>
-                    <img src="images/caramel.png" alt="">
-                </div>
-                <h4><b>NodeJS / Discord.js / MongoDB</b></h4>
-            </div>
-        </div>
-        <a href="https://www.github.com/caramelkat">View More Projects on GitHub -></a>
-    </div>
-    <div class="background-stripe">
-        <div id="contact-me">
-            <h2>Contact Me</h2>
-            <h4>Wanna get in touch or talk business?</h4>
-        <div class="content">
-            <button class="cashapp" onclick="location.href='https://cash.app/$JemTanuki'"><span class="si si-cashapp"></span><span>Cash App</span></button>
-            <button class="kofi" onclick="location.href='https://ko-fi.com/jemtanuki'"><span class="si si-kofi"></span><span>Ko-Fi</span></button>
-            <button class="email" onclick="location.href='mailto:jemma@jemsoftware.dev'"><span class="si si-gmail"></span><span>Email</span></button>
-            <!--<button class="matrix" onclick="location.href='https://matrix.to/#/@jemma:jemverse.xyz'"><span class="si si-matrix"></span><span>Matrix</span></button>-->
-            <button class="twitter" onclick="location.href='https://twitter.com/JemTanuki'"><span class="si si-twitter"></span><span>Twitter</span></button>
-            <button class="mastodon" onclick="location.href='https://chitter.xyz/@Jemma'"><span class="si si-mastodon"></span><span>Mastodon</span></button>
-            <button class="telegram" onclick="location.href='https://t.me/JemTanuki'"><span class="si si-telegram"></span><span>Telegram</span></button>
-            <button class="linkedin" onclick="location.href='https://www.linkedin.com/in/jemma-poffinbarger'"><span class="si si-linkedin"></span><span>LinkedIn</span></button>
-            <button class="discord"><span class="si si-discord"></span><span>Jemma#6508</span></button>
-            <button class="github" onclick="location.href='https://github.com/CaramelKat'"><span class="si si-github"></span><span>GitHub</span></button>
-        </div>
-    </div>
-    </div>
-    <div class="content">
-        <h3>Copyright 2022 - Jemma Poffinbarger</h3>
     </div>
 </body>
+<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="round">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+    </defs>
+</svg>
+<script>
+    function ShowTime() {
+        let dt = new Date();
+        document.getElementById("time").innerHTML = dt.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+        window.setTimeout("ShowTime()", 1000);
+    }
+    ShowTime();
+
+    let screen0 = document.getElementById("screen-0");
+    let screen1 = document.getElementById("screen-1");
+    let banner0 = document.getElementById("banner-0");
+    let banner1 = document.getElementById("banner-1");
+    let position = true;
+    function switchScreen() {
+        if(position) {
+            screen0.classList.add('left');
+            banner0.classList.add('left');
+            screen1.classList.remove('right');
+            banner1.classList.remove('right');
+            position = !position;
+        }
+        else {
+            screen0.classList.remove('left');
+            banner0.classList.remove('left');
+            screen1.classList.add('right');
+            banner1.classList.add('right');
+            position = !position;
+        }
+    }
+</script>
 </html>
