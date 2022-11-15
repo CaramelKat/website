@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src=""></script>
+    <link rel="stylesheet" href="css/redux.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+        html, body {
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
+        }
+        .wrapper {
+            border: 1px solid #9ea2a8;
+            border-radius: 15px;
+            background: white;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body onload="update();">
+    <div>
+        <div class="wrapper">
+            <img src="" id="splash">
+            <h1>Now: <span id="now-temp">00</span><span class="temp-units">--</span></h1>
+            <h2 id="condition"></h2>
+            <h3>High: <span id="now-high">00</span><span class="temp-units">--</span> Low: <span id="now-low">00</span><span class="temp-units">--</span></h3>
+        </div>
+    </div>
+</body>
+<script>
+    const lat = 42.7346, long = -90.4799;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,apparent_temperature,precipitation,rain,showers,snowfall,snow_depth,weathercode,visibility,windspeed_10m,temperature_80m,temperature_120m,temperature_180m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum,windspeed_10m_max,windgusts_10m_max&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`;
+    var nowTemp = document.getElementById('now-temp'), tempUnits = document.getElementsByClassName('temp-units'), condition = document.getElementById('condition');
+    var nowHigh = document.getElementById('now-high'), nowLow = document.getElementById('now-low');
+    function update() {
+        var req = new XMLHttpRequest();
+        req.overrideMimeType("application/json");
+        req.open('GET', url, true);
+        req.onload  = function() {
+            var weatherJSON = JSON.parse(req.responseText);
+            processWeather(weatherJSON)
+        };
+        req.send();
+    }
+    function processWeather(weather) {
+        processUnits(weather.hourly_units);
+        nowTemp.innerText = weather.current_weather.temperature;
+        console.log(weather.current_weather.weathercode)
+        condition.innerText = getWeatherCodeString(weather.current_weather.weathercode);
+        nowHigh.innerText = weather.daily.temperature_2m_max[0];
+        nowLow.innerText = weather.daily.temperature_2m_min[0];
+    }
+    function processUnits(units) {
+        for (var i = 0; i < tempUnits.length; i++) {
+            tempUnits[i].innerHTML = units.apparent_temperature;
+        }
+    }
+    function getWeatherCodeString(code) {
+        switch (Number(code)) {
+            case 0:
+                return 'Clear sky';
+            case 1:
+                return 'Mainly clear';
+            case 2:
+                return 'Partly cloudy';
+            case 3:
+                return 'Overcast';
+            case 45:
+            case 48:
+                return 'Foggy';
+            case 51:
+                return 'Light drizzle';
+            case 53:
+                return 'Moderate drizzle';
+            case 55:
+                return 'Heavy drizzle';
+            case 56:
+                return 'Light freezing drizzle';
+            case 57:
+                return 'Dense freezing drizzle';
+            case 61:
+                return 'Slight rain';
+            case 63:
+                return 'Moderate rain';
+            case 65:
+                return 'Heavy rain';
+            case 66:
+                return 'Light freezing rain';
+            case 67:
+                return 'Heavy freezing rain';
+            case 71:
+                return 'Slight snow fall';
+            case 73:
+                return 'Moderate snow fall';
+            case 75:
+                return 'Heavy snow fall';
+            case 77:
+                return 'Snow grains(???)';
+            case 80:
+                return 'Slight rain showers';
+            case 81:
+                return 'Moderate rain showers';
+            case 82:
+                return 'Violent rain showers';
+            case 85:
+                return 'Slight snow showers';
+            case 86:
+                return 'Heavy show showers';
+            case 95:
+                return 'Thunderstorms';
+            case 96:
+                return 'Thunderstorm with slight hail';
+            case 99:
+                return 'Thunderstorm with heavy hail';
+            default:
+                return 'Fuck idk man, look out ur window';
+        }
+    }
+</script>
+</html>
