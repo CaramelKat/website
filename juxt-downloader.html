@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juxt Post Downloader</title>
+    <script src=" https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js "></script>
+    <style>
+        :root {--bg-shade-1: #1B1F3B;--bg-shade-2-5: #2D3258;--accent-shade-0: #673DB6;--text-shade-3: #fff;--red-shade-1: #a9375b;}body {width: 100%;max-width: 100vw;position: relative;overflow-x: hidden;margin: 0;color: var(--text-shade-3);justify-content: center;font-family: Poppins, Arial, Helvetica, sans-serif;background: var(--bg-shade-1);padding-bottom: env(safe-area-inset-bottom);}body >div {display: flex;height: 100vh;justify-content: center;align-items: center;flex-direction: column;max-width: 700px;margin: auto;}body {margin: 0;}#file {height: min-content;margin-top: 2em;}.progress {height: 1em;width: 75%;background: var(--bg-shade-2-5);margin-top: 2em;border-radius: 2em;overflow: clip;}#bar {height: 100%;width: 0;background: var(--accent-shade-0);-webkit-transition: width 0.75s ease-in-out;-moz-transition: width 0.75s ease-in-out;-o-transition: width 0.75s ease-in-out;transition: width 0.75s ease-in-out;}#text {height: 10vh;overflow: scroll;}#text > h4 {margin: 0.2em;}
+    </style>
+</head>
+<body>
+<div>
+    <h2>Juxt Post Downloader Tool</h2>
+    <p>Upload your posts export here to download all images in a ZIP file</p>
+    <input id="file" type="file" />
+    <div class="progress">
+        <div id="bar"></div>
+    </div>
+    <p id="text"></p>
+</div>
+<script>
+    const cdn = 'https://pretendo-cdn.b-cdn.net', bar = document.getElementById('bar'), text = document.getElementById('text');
+    let user;
+    (async function(){
+
+        async function onChange(event) {
+            let reader = new FileReader();
+            reader.onload = onReaderLoad;
+            reader.readAsText(event.target.files[0]);
+            text.innerHTML = '';
+        }
+
+        async function onReaderLoad(event){
+            updateBar('0%', '');
+            try {
+                let result = JSON.parse(event.target.result);
+                updateBar('10%', 'File uploaded');
+                user = result.user_content;
+                await generateUrls(result);
+            } catch (e) {
+                if (e instanceof SyntaxError) {
+                    updateBar('100%', 'The file you uploaded is invalid. Please try again');
+                } else {
+                    updateBar('100%', 'Sorry, something went wrong. Please try again');
+                }
+                bar.style.background = 'var(--red-shade-1)';
+            }
+        }
+        document.getElementById('file').addEventListener('change', onChange);
+
+    }());
+    async function generateUrls(document) {
+        updateBar('15%', 'Parsing file...');
+        let posts = document.posts, numPaintings = 0, numScreenshots = 0, urls = [];
+        if(!posts) return;
+        for(let post of posts) {
+            if(post.painting) {
+                numPaintings++;
+                urls.push(`${cdn}/paintings/${post.pid}/${post.id}.png`);
+            }
+            if(post.screenshot) {
+                numScreenshots++;
+                urls.push(`${cdn}/screenshots/${post.pid}/${post.id}.jpg`);
+            }
+
+        }
+        updateBar('25%', `Found ${posts.length} post(s). ${numPaintings} Drawings and ${numScreenshots} Screenshots`);
+        await downloadZip(urls);
+    }
+    async function downloadZip(urls) {
+        // Create a new zip object
+        const zip = new JSZip();
+        updateBar('50%', 'Downloading files...');
+        let progress = 50, increment = 40 / urls.length;
+        const requests = urls.map((url) => fetch(url));
+        const responses = await Promise.all(requests);
+        const promises = responses.map((response) => response.blob().then(blob => {
+            progress += increment;
+            updateBar(`${progress}%`);
+            zip.file(response.url.replace(`/${user.pid}`, '').substring(cdn.length + 1), blob);
+        }));
+        await Promise.all(promises);
+
+        zip.generateAsync({ type: "blob" })
+            .then(content => {
+                updateBar('100%', 'File done! Downloading...');
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(content);
+                link.download = `${user.screen_name}-${user.pid}-posts.zip`;
+                link.click();
+            });
+    }
+    function updateBar(percentage, message) {
+        bar.style.background = 'var(--accent-shade-0)';
+        bar.style.width = percentage ? percentage : bar.style.width;
+        text.innerHTML = message ? `<h4>${message}</h4>${text.innerHTML}`: text.innerHTML;
+    }
+</script>
+</body>
+</html>

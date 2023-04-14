@@ -6,32 +6,90 @@
     <title>Weather</title>
     <script src=""></script>
     <link rel="stylesheet" href="css/redux.css">
+    <link rel="stylesheet" href="css/weather.css">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <style>
-        html, body {
-            margin: 0;
-            font-family: Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: repeating-linear-gradient( to right, #c4ccd6, #c4ccd6 8px, #cbd1d9 5px, #cbd1d9 11px );
-        }
-        .wrapper {
-            border: 1px solid #9ea2a8;
-            border-radius: 15px;
-            background: white;
-            margin: 14px;
-        }
-    </style>
 </head>
 <body onload="update();">
-    <div>
-        <div class="wrapper">
-            <img src="" id="splash">
-            <h1>Now: <span id="now-temp">00</span><span class="temp-units">--</span></h1>
-            <h2 id="condition"></h2>
-            <h3>High: <span id="now-high">00</span><span class="temp-units">--</span> Low: <span id="now-low">00</span><span class="temp-units">--</span></h3>
+    <div class="display">
+        <div class="app">
+            <header>
+                <div class="statusbar">
+                    <h3 id="carrier">iPod</h3>
+                    <div class="wifi">
+                        <svg class="svg-icon" style="width: 1.5em; height: 1.5em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 192c-163 0-326 67.2-443 176.6-6.6 6-6.8 16.2-0.6 22.8l53.4 55.8c6.2 6.6 16.6 6.8 23.2 0.6 46.6-43.2 99.8-77.6 158.6-102 66-27.6 136.2-41.4 208.6-41.4s142.6 14 208.6 41.4c58.8 24.6 112 58.8 158.6 102 6.6 6.2 17 6 23.2-0.6l53.4-55.8c6.2-6.4 6-16.6-0.6-22.8C838 259.2 675 192 512 192z"/><path d="M226.4 555l57.2 56.6c6.2 6 16 6.4 22.4 0.6 56.6-50.2 129.2-77.8 205.8-77.8s149.2 27.4 205.8 77.8c6.4 5.8 16.2 5.4 22.4-0.6l57.2-56.6c6.6-6.6 6.4-17.2-0.6-23.4-75-67.8-175.2-109.2-285-109.2s-210 41.4-285 109.2c-6.6 6.2-6.8 16.8-0.2 23.4zM512 648.4c-46.8 0-89.2 19.6-118.8 51-6 6.4-5.8 16.2 0.4 22.4l106.8 105.4c6.4 6.4 16.8 6.4 23.2 0l106.8-105.4c6.2-6.2 6.4-16 0.4-22.4-29.6-31.2-72-51-118.8-51z"/></svg>
+                    </div>
+                    <h3 id="time">7:02 PM</h3>
+                    <h3 id="battery">69%</h3>
+                    <div id="battery-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-battery" stroke-width="1" stroke="black" style="width: 1.5em;height: 1.5em;vertical-align: middle;overflow: hidden;stroke: currentColor;color: #bbc7d3;" width="32" viewBox="0 0 20 25" height="20">
+                            <rect xmlns="http://www.w3.org/2000/svg" ry="0" rx="0" width="12" y="7.75" fill="currentColor" x="1.5" height="7.5"/>
+                            <rect xmlns="http://www.w3.org/2000/svg" y="6" ry="0" rx="0" width="20" x="0" height="11"/>
+                            <rect xmlns="http://www.w3.org/2000/svg" height="4" width="2" rx="1" ry="0" x="20" y="10"/></svg>
+                    </div>
+                </div>
+            </header>
+            <div class="content" id="screen-0">
+                <div class="wrapper">
+                    <div class="weather-header">
+                        <div class="left-side">
+                            <h2>Platteville</h2>
+                            <h4 id="last-updated">00:00--</h4>
+                        </div>
+                        <div class="right-side">
+                            <h1><span id="now-temp">00</span>°</h1>
+                            <h3><span id="high">H: <span id="now-high">00</span>°</span>  <span id="low">L: <span id="now-low">00</span>°</span></h3>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                        <div>
+                            <h6>1PM</h6>
+                            <img>
+                            <h5>93°</h5>
+                        </div>
+                    </div>
+                    <h3 id="condition"></h3>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -40,6 +98,7 @@
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,apparent_temperature,precipitation,rain,showers,snowfall,snow_depth,weathercode,visibility,windspeed_10m,temperature_80m,temperature_120m,temperature_180m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum,windspeed_10m_max,windgusts_10m_max&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`;
     var nowTemp = document.getElementById('now-temp'), tempUnits = document.getElementsByClassName('temp-units'), condition = document.getElementById('condition');
     var nowHigh = document.getElementById('now-high'), nowLow = document.getElementById('now-low');
+    var lastUpdated = document.getElementById('last-updated');
     function update() {
         var req = new XMLHttpRequest();
         req.overrideMimeType("application/json");
@@ -52,11 +111,12 @@
     }
     function processWeather(weather) {
         processUnits(weather.hourly_units);
-        nowTemp.innerText = weather.current_weather.temperature;
+        nowTemp.innerText = Math.round(weather.current_weather.temperature);
         console.log(weather.current_weather.weathercode)
         condition.innerText = getWeatherCodeString(weather.current_weather.weathercode);
         nowHigh.innerText = weather.daily.temperature_2m_max[0];
         nowLow.innerText = weather.daily.temperature_2m_min[0];
+        lastUpdated.innerText = getTimeString(weather.current_weather.time);
     }
     function processUnits(units) {
         for (var i = 0; i < tempUnits.length; i++) {
@@ -124,5 +184,17 @@
                 return 'Fuck idk man, look out ur window';
         }
     }
+    function getTimeString(date) {
+        var updated = new Date(Date.parse(date));
+        return updated.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+    }
+</script>
+<script>
+    function ShowTime() {
+        var dt = new Date();
+        document.getElementById("time").innerHTML = dt.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+        window.setTimeout("ShowTime()", 1000);
+    }
+    ShowTime();
 </script>
 </html>
