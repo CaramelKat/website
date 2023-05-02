@@ -103,25 +103,47 @@ header {
     margin: 0;
 }
 .back-nav-filter {
-    filter: url(#round);
     position: absolute;
     left: 0;
+    /*! filter: url(#round); */
 }
 .back-nav {
     position: absolute;
-    left: 0.5em;
+    left: 1.5em;
     height: 3em;
-    margin-top: 0.9em;
+    margin-top: 1em;
     background-image: linear-gradient(#9ea9c3, #3b577d);
     color: #fafefc;
     text-shadow: 0 -2.25px 0 rgba(0, 0, 0, 0.3);
     border: none;
-    padding: 0 1em 0 1.75em;
-    border-radius: 7px;
+    padding-right: 1em;
+    border-radius: 0 7px 7px 0;
     box-shadow: inset 0 0 3px #323c48;
-    clip-path: polygon(25% 0px, 100% 0px, 100% 100%, 25% 100%, 0px 50.00%);
     width: max-content;
     cursor: pointer;
+    margin-left: 1em;
+    z-index: 1;
+    border-radius: 7px;
+}
+.back-nav:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    top: 6px;
+    margin: 0 auto;
+    background: linear-gradient(130deg, #9ea9c3, #3b577d) no-repeat left, right;
+    left: -10px;
+    box-shadow: inset 0px 0px 3px #323c48;
+    transform: rotate(45deg);
+: polygon(100%,100%);
+: ;
+: ;
+    clip-path: polygon(-36px -13px, -45.71% -12px, 100% 100%, -30.26% 100%);
+    border: 0;
+    z-index: 0;
+    overflow: hidden;
 }
 /* List Types */
 .list {
