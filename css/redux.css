@@ -110,7 +110,7 @@ header {
 .back-nav {
     position: absolute;
     left: 0.5em;
-    height: 3em;
+    height: 39px;
     margin-top: 1em;
     background-image: linear-gradient(#9ea9c3, #3b577d);
     color: #fafefc;
@@ -122,27 +122,26 @@ header {
     cursor: pointer;
     margin-left: 1em;
     z-index: 1;
-    border-radius: 7px;
+    border-radius: 0 7px 7px 0;
+    padding-left: 1ch;
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 100%);
 }
-.back-nav:before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    top: 6px;
-    margin: 0 auto;
-    background: linear-gradient(130deg, #9ea9c3, #3b577d) no-repeat left, right;
-    left: -10px;
-    box-shadow: inset 0px 0px 3px #323c48;
-    transform: rotate(45deg);
-: polygon(100%,100%);
-: ;
-: ;
-    clip-path: polygon(-36px -13px, -45.71% -12px, 100% 100%, -30.26% 100%);
-    border: 0;
-    z-index: 0;
-    overflow: hidden;
+.back-nav-filter::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  top: 19px;
+  margin: 0 auto;
+  background: linear-gradient(130deg, #9ea9c3, #3b577d) no-repeat left, right;
+  left: 10px;
+  box-shadow: inset 0px 0px 3px #323c48;
+  transform: rotate(45deg);
+  clip-path: polygon(-36px -13px, -45.71% -12px, 100% 100%, -30.26% 100%);
+  border: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 /* List Types */
 .list {
