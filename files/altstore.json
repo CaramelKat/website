@@ -14,12 +14,12 @@
       "localizedDescription": "The worlds first e621 client for iOS, iPadOS, and macOS built with SwiftUI\n\nFeatures\n\n    - Infinite scrolling\n    - Post details page\n    - Search for tags\n    - Dynamic tag suggestions\n - Downloading media\n - Supports most media formats\n",
       "iconURL": "https://jemsoftware.dev/images/tanuki.png",
       "tintColor": "b2929c",
-      "size": 2800000,
+      "size": 3020444,
       "screenshotURLs": [
-        "https://camo.githubusercontent.com/338ee68b3b728283586b6c90d676be80ab5326f92f8e2a3ec21eb0884f37b6af/68747470733a2f2f692e696d6775722e636f6d2f70774673616a4d2e6a7067",
-        "https://camo.githubusercontent.com/4b0de38ce0eec570406bf30a9d36356b5cec888ac93285e48348e05b25aa4b84/68747470733a2f2f692e696d6775722e636f6d2f597151677344492e706e67",
-        "https://camo.githubusercontent.com/0fcbbac648f1535ceec02b2c8387abfee2c87ab0b63ca142d2de70ac767c358f/68747470733a2f2f692e696d6775722e636f6d2f383954714c665a2e706e67",
-        "https://camo.githubusercontent.com/9c9cdeb5f45204eb267703bf3fec7ddf7f0618fd9f741d8b6ea840d8f4990389/68747470733a2f2f692e696d6775722e636f6d2f36535a476c62412e6a7067"
+        "https://i.imgur.com/pwFsajM.jpeg",
+        "https://i.imgur.com/YqQgsDI.png",
+        "https://i.imgur.com/89TqLfZ.png",
+        "https://i.imgur.com/6SZGlbA.jpeg"
       ]
     }
   ]
