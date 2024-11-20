@@ -6,7 +6,6 @@
   "iconURL": "https://tanuki.b-cdn.net/images/Twig/Twig_ne0ntrash_pride_31_jul_2023.jpg",
   "headerURL": "https://tanuki.jemverse.xyz/grass.bmp",
   "website": "https://jemsoftware.dev",
-  "tintColor": "#4185A9",
   "featuredApps": ["dev.jemsoftware.tanukistash"],
   "apps": [
     {
@@ -14,32 +13,34 @@
       "bundleIdentifier": "dev.jemsoftware.tanukistash",
       "developerName": "JemSoftware",
       "subtitle": "Open source e621 client for iOS built with SwiftUI",
-      "localizedDescription": "Tanuki's Stash",
+      "localizedDescription": "Open source e621 client for iOS built with SwiftUI",
       "iconURL": "https://jemsoftware.dev/images/tanuki.png",
-      "tintColor": "#b2929c",
-      "screenshots": [
+      "tintColor": "b2929c",
+      "screenshotURLs": [
         "https://i.imgur.com/pwFsajM.jpeg",
         "https://i.imgur.com/YqQgsDI.png",
         "https://i.imgur.com/89TqLfZ.png",
         "https://i.imgur.com/6SZGlbA.jpeg"
       ],
+      "beta": false,
       "versions": [
         {
           "version": "0.0.3",
-          "date": "2024-01-26T09:00:00-08:00",
-          "size": 639555,
-          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
+          "date": "2024-01-26T22:00:00.0000000Z",
           "localizedDescription": "This release including a number of improvements:\n\n    -Support for downloading videos and photos to your photo library\n    -Dynamic tag suggestions from the e621 API\n    -Toggle to switch between e621 and e926 without installing different versions of the app\n    -Added field to input account username, to be used in a later release",
-          "minOSVersion": "16.0"
+          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
+          "size": 639555,
+          "minOSVersion": "16.0",
+          "maxOSVersion": "99.0"
         }
       ],
-      "appPermissions": {
-        "entitlements": [],
-        "privacy": {
-          "NSPhotoLibraryUsageDescription": "App saves photos to your Photo Library."
-        }
-      }
+      "version": "0.0.3",
+      "versionDate": "2024-01-26T22:00:00.0000000Z",
+      "versionDescription": "This release including a number of improvements:\n\n    -Support for downloading videos and photos to your photo library\n    -Dynamic tag suggestions from the e621 API\n    -Toggle to switch between e621 and e926 without installing different versions of the app\n    -Added field to input account username, to be used in a later release",
+      "downloadURL":"https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
+      "size": 639555
     }
   ],
-  "news": []
+  "news": [
+  ]
 }
