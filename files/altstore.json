@@ -25,20 +25,20 @@
       "beta": false,
       "versions": [
         {
-          "version": "0.0.3",
-          "date": "2024-01-26T22:00:00.0000000Z",
-          "localizedDescription": "This release including a number of improvements:\n\n    -Support for downloading videos and photos to your photo library\n    -Dynamic tag suggestions from the e621 API\n    -Toggle to switch between e621 and e926 without installing different versions of the app\n    -Added field to input account username, to be used in a later release",
-          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
-          "size": 639555,
-          "minOSVersion": "16.0",
-          "maxOSVersion": "99.0"
-        },
-        {
           "version": "0.0.4",
           "date": "2024-11-19T22:00:00.0000000Z",
           "localizedDescription": "Code cleanup",
           "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
           "size": 628077,
+          "minOSVersion": "16.0",
+          "maxOSVersion": "99.0"
+        },
+        {
+          "version": "0.0.3",
+          "date": "2024-01-26T22:00:00.0000000Z",
+          "localizedDescription": "This release including a number of improvements:\n\n    -Support for downloading videos and photos to your photo library\n    -Dynamic tag suggestions from the e621 API\n    -Toggle to switch between e621 and e926 without installing different versions of the app\n    -Added field to input account username, to be used in a later release",
+          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.3/Tanuki.s.Stash.v0.0.3.ipa",
+          "size": 639555,
           "minOSVersion": "16.0",
           "maxOSVersion": "99.0"
         }
