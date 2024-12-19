@@ -28,7 +28,7 @@
           "version": "0.0.5",
           "date": "2024-12-18T22:00:00.0000000Z",
           "localizedDescription": "Auth v1",
-          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/V0.0.5/Tanukis.Stash.v0.0.5.ipa",
+          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/v0.0.5/Tanukis.Stash.0.0.5.ipa",
           "size": 629890,
           "minOSVersion": "16.0",
           "maxOSVersion": "99.0"
@@ -55,7 +55,7 @@
       "version": "0.0.5",
       "versionDate": "2024-12-18T22:00:00.0000000Z",
       "versionDescription": "Auth v1",
-      "downloadURL":"https://github.com/CaramelKat/Tanukis-Stash/releases/download/v0.0.5/Tanuki.s.Stash.0.0.5.ipa",
+      "downloadURL":"https://github.com/CaramelKat/Tanukis-Stash/releases/download/v0.0.5/Tanukis.Stash.0.0.5.ipa",
       "size": 629890
     }
   ],
