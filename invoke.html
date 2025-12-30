@@ -1,0 +1,417 @@
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+	<style>
+		:root {
+			--led-size: 45px;
+			--led-1: rgb(0, 0, 0);
+			--led-2: rgb(0, 0, 0);
+			--led-3: rgb(0, 0, 0);
+			--led-4: rgb(0, 0, 0);
+			--led-5: rgb(0, 0, 0);
+			--led-6: rgb(0, 0, 0);
+			--led-7: rgb(0, 0, 0);
+			--led-8: rgb(0, 0, 0);
+			--led-9: rgb(0, 0, 0);
+			--led-10: rgb(0, 0, 0);
+			--led-11: rgb(0, 0, 0);
+			--led-12: rgb(0, 0, 0);
+			--led-13: rgb(0, 0, 0);
+		}
+
+		html {
+			font-family: Helvetica, Arial, sans-serif;
+			background-color: black;
+			color: white;
+		}
+
+		header,
+		.main {
+			display: flex;
+			justify-content: center;
+		}
+
+		footer {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1em;
+		}
+
+		.matrix-border {
+			border: #393939 solid 30px;
+			width: 300px;
+			height: 300px;
+			overflow: clip;
+			border-radius: 50%;
+			margin-bottom: 1em;
+			display: flex;
+			justify-content: center;
+			align-items: anchor-center;
+			filter: blur(4px);
+		}
+
+		.matrix {
+			display: block;
+			width: 190px;
+			height: 190px;
+			border-radius: 50%;
+			background: conic-gradient(var(--led-1), var(--led-2), var(--led-3), var(--led-4), var(--led-5), var(--led-6),
+					var(--led-7), var(--led-8), var(--led-9), var(--led-10), var(--led-11), var(--led-12), var(--led-1));
+			background-size: contain;
+			filter: blur(10px);
+			position: relative;
+		}
+
+		.matrix .center {
+			aspect-ratio: 1;
+			box-sizing: content-box;
+			width: calc(var(--led-size) * 1.8);
+			height: calc(var(--led-size) * 1.8);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			border: 20px solid black;
+			background-color: var(--led-13);
+		}
+
+		footer a {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			vertical-align: middle;
+			display: inline-flex;
+			justify-content: center;
+			align-items: anchor-center;
+			margin: 2px 4px;
+			border: solid 2px;
+			border-radius: 1ch;
+			user-select: none;
+			cursor: pointer;
+		}
+
+		div#frames {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		div#frames a.selected {
+			background-color: blue;
+			color: white;
+		}
+
+		input[type="file"] {
+			margin-bottom: 1em;
+		}
+
+		.picker-wrapper {
+			margin-left: 1em;
+		}
+	</style>
+	<title>Invoke LED Builder</title>
+</head>
+
+<body>
+	<header>
+		<h1>Invoke LED Builder</h1>
+	</header>
+	<div class="main">
+		<div class="matrix-border">
+			<div class="matrix">
+				<div id="led-13" class="center"></div>
+			</div>
+		</div>
+		<div class="picker-wrapper">
+			<div>
+				<input type="color" id="1" name="led1" value="#000000" />
+				<label for="led1">LED 1</label>
+			</div>
+			<div>
+				<input type="color" id="2" name="led2" value="#000000" />
+				<label for="led2">LED 2</label>
+			</div>
+			<div>
+				<input type="color" id="3" name="led3" value="#000000" />
+				<label for="led3">LED 3</label>
+			</div>
+			<div>
+				<input type="color" id="4" name="led4" value="#000000" />
+				<label for="led4">LED 4</label>
+			</div>
+			<div>
+				<input type="color" id="5" name="led5" value="#000000" />
+				<label for="led5">LED 5</label>
+			</div>
+			<div>
+				<input type="color" id="6" name="led6" value="#000000" />
+				<label for="led6">LED 6</label>
+			</div>
+			<div>
+				<input type="color" id="7" name="led7" value="#000000" />
+				<label for="led7">LED 7</label>
+			</div>
+			<div>
+				<input type="color" id="8" name="led8" value="#000000" />
+				<label for="led8">LED 8</label>
+			</div>
+			<div>
+				<input type="color" id="9" name="led9" value="#000000" />
+				<label for="led9">LED 9</label>
+			</div>
+			<div>
+				<input type="color" id="10" name="led10" value="#000000" />
+				<label for="led10">LED 10</label>
+			</div>
+			<div>
+				<input type="color" id="11" name="led11" value="#000000" />
+				<label for="led11">LED 11</label>
+			</div>
+			<div>
+				<input type="color" id="12" name="led12" value="#000000" />
+				<label for="led12">LED 12</label>
+			</div>
+			<div>
+				<input type="color" id="13" name="led13" value="#000000" />
+				<label for="led13">LED 13</label>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div>
+			<input type="file" id="file-upload" />
+			<label for="file-name">File Name:</label>
+			<input type="text" id="file-name" name="file-name"/>
+		</div>
+		<div>
+			<a id="frame-back" offset="-1">⬅️</a>
+			<a id="playback">▶️</a>
+			<a id="frame-forward" offset="1">➡️</a>
+			<a id="del-frame">🗑️</a>
+			<a id="add-frame">➕</a>
+			<a id="download">💾</a>
+		</div>
+		<div id="frames">
+		</div>
+	</footer>
+</body>
+<script>
+	const NUM_LEDS = 13
+	const LED_PAIRS = 3
+	const VALID_FILE_MOD = NUM_LEDS * LED_PAIRS
+	let frames = []
+	let currentIndex = -1;
+	let playing = false;
+	let timer = undefined;
+
+	const fileUploadInput = document.getElementById('file-upload');
+	const fileNameInput = document.getElementById('file-name');
+	const framesWrapper = document.getElementById('frames');
+	const frameBack = document.getElementById('frame-back');
+	const frameForward = document.getElementById('frame-forward');
+	const playbackControl = document.getElementById('playback');
+	const addFrameBtn = document.getElementById('add-frame');
+	const delFrameBtn = document.getElementById('del-frame');
+	const downloadBtn = document.getElementById('download');
+
+	function downloadURL(data, fileName) {
+		const a = document.createElement('a')
+		a.href = data
+		a.download = fileName
+		document.body.appendChild(a)
+		a.style.display = 'none'
+		a.click()
+		a.remove()
+	}
+
+	function downloadBlob(data, fileName) {
+
+		const blob = new Blob([data], {
+			type: 'application/octet-stream'
+		})
+
+		const url = window.URL.createObjectURL(blob)
+
+		downloadURL(url, fileName)
+
+		setTimeout(() => window.URL.revokeObjectURL(url), 1000)
+	}
+
+	frameBack.addEventListener("click", function (e) {
+		if (playing) return;
+		offsetFrame(Number(this.getAttribute('offset')));
+	});
+	frameForward.addEventListener("click", function (e) {
+		if (playing) return;
+		offsetFrame(Number(this.getAttribute('offset')));
+	});
+	playbackControl.addEventListener("click", togglePlayback);
+	addFrameBtn.addEventListener("click", addFrame);
+	delFrameBtn.addEventListener("click", delFrame);
+	downloadBtn.addEventListener("click", download);
+
+	document.addEventListener('keydown', (event) => {
+		if (event.target == fileNameInput)
+			return;
+		event.preventDefault();
+		switch (event.key) {
+			case "ArrowLeft":
+				offsetFrame(-1);
+				break;
+			case "ArrowRight":
+				offsetFrame(1);
+				break;
+			case ' ':
+				togglePlayback();
+				break;
+		}
+	});
+
+	function* chunks(arr, n) {
+		for (let i = 0; i < arr.length; i += n) {
+			yield arr.slice(i, i + n);
+		}
+	}
+
+	function componentToHex(c) {
+		if (!c) return '00';
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	}
+
+	function rgbToHex(r, g, b) {
+		return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+	}
+
+	function hexToRgb(hex) {
+		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		return result ? {
+			r: parseInt(result[1], 16),
+			g: parseInt(result[2], 16),
+			b: parseInt(result[3], 16)
+		} : null;
+	}
+
+	function togglePlayback() {
+		if (frames.length == 0) return;
+
+		playing = !playing;
+		playbackControl.innerText = playing ? '⏸️' : '▶️'
+
+		if (playing)
+			timer = setInterval(() => { offsetFrame(1) }, 50);
+		else
+			if (timer) clearInterval(timer)
+	}
+
+	function offsetFrame(offset) {
+		let newPosition = currentIndex + offset;
+
+		if (newPosition < 0)
+			newPosition = frames.length - 1;
+		else if (newPosition > frames.length - 1)
+			newPosition = 0
+
+		setFrame(newPosition);
+	}
+
+	function addFrame() {
+		let oldIndex = currentIndex;
+		frames.splice(oldIndex + 1, 0, new Array(NUM_LEDS).fill([0, 0, 0]));
+		initFrames();
+		setFrame(oldIndex + 1);
+	}
+
+	function delFrame() {
+		let oldIndex = currentIndex;
+		frames.splice(oldIndex, 1);
+		initFrames();
+		setFrame(oldIndex - 1);
+	}
+
+	function initFrames() {
+		framesWrapper.innerHTML = '';
+		for (let frame in frames) {
+			let frameElement = document.createElement('a');
+			frameElement.setAttribute("id", `frame-${frame}`);
+			frameElement.setAttribute("index", frame);
+			frameElement.innerText = Number(frame) + 1;
+			frameElement.addEventListener("click", function (e) {
+				if (playing) return;
+				setFrame(Number(this.getAttribute('index')));
+			});
+
+			framesWrapper.appendChild(frameElement);
+		}
+		setFrame(0);
+	}
+
+	function setFrame(index) {
+		if (index < 0 || index > frames.length - 1) return;
+
+		let currentSelection = document.getElementById(`frame-${currentIndex}`);
+
+		if (currentSelection)
+			currentSelection.classList.remove('selected');
+
+		let newSelection = document.getElementById(`frame-${index}`);
+
+		if (!newSelection) return;
+		newSelection.classList.add('selected')
+		currentIndex = index;
+
+		let i = 1;
+		for (let led of frames[index]) {
+			document.documentElement.style.setProperty(`--led-${i}`, `rgb(${led[0]}, ${led[1]}, ${led[2]})`);
+			document.getElementById(i).value = rgbToHex(led[0], led[1], led[2])
+			i++;
+		}
+	}
+
+	function setLed(index, color) {
+		frames[currentIndex][index - 1][0] = color.r;
+		frames[currentIndex][index - 1][1] = color.g;
+		frames[currentIndex][index - 1][2] = color.b;
+		document.documentElement.style.setProperty(`--led-${index}`, `rgb(${color.r}, ${color.g}, ${color.b})`);
+	}
+
+	function download() {
+		let fileBuffer = [];
+		for (let led of frames.flat()) {
+			for (let val of led)
+				fileBuffer.push(val);
+		}
+		let name = fileNameInput.value.trim() == '' ? 'Invoke.bin' : fileNameInput.value + '.bin'
+		downloadBlob(new Uint8Array(fileBuffer).buffer, name)
+	}
+
+	fileUploadInput.addEventListener('change', function () {
+		let reader = new FileReader();
+		reader.onload = function () {
+			let arrayBuffer = this.result, array = new Uint8Array(arrayBuffer);
+			if (array.length % VALID_FILE_MOD != 0) {
+				window.alert('File is invalid length!!');
+				console.error('File is invalid length!!', array.length, array.length % VALID_FILE_MOD);
+				return;
+			}
+			let ledGroups = [...chunks(array, LED_PAIRS)];
+			frames = [...chunks(ledGroups, NUM_LEDS)];
+
+			initFrames();
+		}
+		reader.readAsArrayBuffer(this.files[0]);
+	}, false);
+
+	for (let input of document.querySelectorAll('input[type=color]')) {
+		input.addEventListener('change', function (e) {
+			setLed(Number(e.target.id), hexToRgb(e.target.value))
+		}, false)
+	}
+	// Add a empty base frame so shit doesn't get fucked up
+	addFrame();
+</script>
+
+</html>
