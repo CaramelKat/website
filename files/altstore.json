@@ -25,6 +25,15 @@
       "beta": false,
       "versions": [
         {
+          "version": "0.3.0",
+          "date": "2026-03-02T22:00:00.0000000Z",
+          "localizedDescription": "Fix user data",
+          "downloadURL": "https://github.com/CaramelKat/Tanukis-Stash/releases/download/v0.3.0/Tanuki.s.Stash.ipa",
+          "size": 5043206,
+          "minOSVersion": "16.0",
+          "maxOSVersion": "99.0"
+        },
+        {
           "version": "0.0.5",
           "date": "2024-12-18T22:00:00.0000000Z",
           "localizedDescription": "Auth v1",
