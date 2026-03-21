@@ -284,6 +284,8 @@ Button.settings {
     height: 125px;
     border-radius: 20px;
     user-select: none;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 .left-image-right-content > .info {
